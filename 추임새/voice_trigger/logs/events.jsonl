@@ -1,0 +1,325 @@
+{"event": "session", "time": 1794536559.923512, "monotonic": 133131.1750495, "model": "mlx-community/whisper-large-v3-turbo", "settings": {"model": "mlx-community/whisper-large-v3-turbo", "language": "ko", "input_device": null, "output_device": null, "vad_start": 0.6, "vad_end": 0.35, "start_frames": 2, "silence_duration": 0.32, "pre_roll": 0.224, "min_speech": 0.128, "max_speech": 2.4, "overlap": 0.384, "max_latency": 4.0, "output_margin": 0.05, "echo_guard": 0.2, "max_frame_age": 0.25, "cooldown": 0.7, "min_avg_logprob": -0.8, "max_no_speech_prob": 0.55, "max_compression_ratio": 2.4, "min_word_probability": 0.35, "event_log": "logs/events.jsonl"}}
+{"event": "input_overflow", "time": 1794536564.766562, "monotonic": 133136.01811525}
+{"event": "capture_gap", "time": 1794536564.811589, "monotonic": 133136.063142625}
+{"event": "recognized", "time": 1794536599.845788, "monotonic": 133171.097458375, "uid": 1, "text": "얼쏘", "reason": "not_registered_interjection", "inference_seconds": 6.922991625004215, "start": 133163.02778454102, "speech_end": 133163.827775875, "command": null}
+{"event": "recognized", "time": 1794536611.707304, "monotonic": 133182.959014, "uid": 2, "text": "근데", "reason": "not_registered_interjection", "inference_seconds": 5.575163125002291, "start": 133176.436393166, "speech_end": 133177.044416666, "command": null}
+{"event": "recognized", "time": 1794536622.566943, "monotonic": 133193.818688916, "uid": 3, "text": "소", "reason": "not_registered_interjection", "inference_seconds": 5.587000208004611, "start": 133187.092796582, "speech_end": 133187.89288491601, "command": null}
+{"event": "recognized", "time": 1794536661.912373, "monotonic": 133233.164249958, "uid": 4, "text": "얼쑤.", "reason": "accepted", "inference_seconds": 7.027201459015487, "start": 133224.950461625, "speech_end": 133225.782421542, "command": "얼쑤"}
+{"event": "deadline", "time": 1794536661.913622, "monotonic": 133233.165498125, "uid": 4}
+{"event": "continuous_speech", "time": 1794536796.432411, "monotonic": 133367.684736, "uid": 5}
+{"event": "continuous_speech", "time": 1794536796.5924559, "monotonic": 133367.844780916, "uid": 6}
+{"event": "capture_gap", "time": 1794536801.14198, "monotonic": 133372.394321}
+{"event": "capture_gap", "time": 1794536806.2695339, "monotonic": 133377.521890875}
+{"event": "recognized", "time": 1794536807.1125472, "monotonic": 133378.364906708, "uid": 7, "text": "오, 이즈", "reason": "not_registered_interjection", "inference_seconds": 8.831891707988689, "start": 133367.83667291698, "speech_end": 133369.180694792, "command": null}
+{"event": "deadline", "time": 1794536807.114392, "monotonic": 133378.366751708, "uid": 8}
+{"event": "recognized", "time": 1794536833.151686, "monotonic": 133404.404132166, "uid": 9, "text": "고용", "reason": "not_registered_interjection", "inference_seconds": 6.937788915995043, "start": 133396.572777207, "speech_end": 133397.11682854098, "command": null}
+{"event": "capture_gap", "time": 1794536849.496005, "monotonic": 133420.748506875}
+{"event": "input_overflow", "time": 1794536852.576422, "monotonic": 133423.828933958}
+{"event": "capture_gap", "time": 1794536852.6244512, "monotonic": 133423.876962541}
+{"event": "stale_frame", "time": 1794536853.3684459, "monotonic": 133424.620960208}
+{"event": "stale_frame", "time": 1794536853.377943, "monotonic": 133424.630456416}
+{"event": "stale_frame", "time": 1794536853.378336, "monotonic": 133424.630849458}
+{"event": "capture_gap", "time": 1794536853.3827, "monotonic": 133424.635214666}
+{"event": "stale_frame", "time": 1794536853.475069, "monotonic": 133424.727583375}
+{"event": "stale_frame", "time": 1794536853.4753191, "monotonic": 133424.727833291}
+{"event": "capture_gap", "time": 1794536853.4754748, "monotonic": 133424.727988833}
+{"event": "capture_gap", "time": 1794536853.478107, "monotonic": 133424.730620625}
+{"event": "capture_gap", "time": 1794536853.894853, "monotonic": 133425.147368458}
+{"event": "capture_gap", "time": 1794536856.37878, "monotonic": 133427.631303208}
+{"event": "capture_gap", "time": 1794536856.389788, "monotonic": 133427.642311083}
+{"event": "recognized", "time": 1794536857.415335, "monotonic": 133428.66786275, "uid": 10, "text": "이걸 어떻게 하지?", "reason": "not_registered_interjection", "inference_seconds": 9.618197167001199, "start": 133417.661718416, "speech_end": 133418.717735958, "command": null}
+{"event": "capture_gap", "time": 1794536858.8686311, "monotonic": 133430.12116325}
+{"event": "stale_frame", "time": 1794536866.761524, "monotonic": 133438.014082083}
+{"event": "stale_frame", "time": 1794536866.762348, "monotonic": 133438.014905666}
+{"event": "stale_frame", "time": 1794536866.7624478, "monotonic": 133438.015005791}
+{"event": "capture_gap", "time": 1794536866.7625659, "monotonic": 133438.015123375}
+{"event": "recognized", "time": 1794536866.951665, "monotonic": 133438.204224708, "uid": 11, "text": "사이트 자체", "reason": "not_registered_interjection", "inference_seconds": 9.514038708002772, "start": 133425.101861833, "speech_end": 133427.119033208, "command": null}
+{"event": "recognized", "time": 1794536879.101581, "monotonic": 133450.354180125, "uid": 12, "text": "먹을게", "reason": "not_registered_interjection", "inference_seconds": 6.28909079200821, "start": 133442.030818291, "speech_end": 133443.72691212498, "command": null}
+{"event": "overload_replaced", "time": 1794536880.22302, "monotonic": 133451.758158791, "uid": 14}
+{"event": "overload_replaced", "time": 1794536881.711373, "monotonic": 133453.246541375, "uid": 15}
+{"event": "overload_replaced", "time": 1794536885.16271, "monotonic": 133456.698038125, "uid": 16}
+{"event": "recognized", "time": 1794536886.40522, "monotonic": 133457.94060775, "uid": 13, "text": "아니 사실은", "reason": "not_registered_interjection", "inference_seconds": 7.515970584005117, "start": 133446.92703062497, "speech_end": 133448.49511975, "command": null}
+{"event": "capture_gap", "time": 1794536886.495668, "monotonic": 133458.031059458}
+{"event": "capture_gap", "time": 1794536886.52378, "monotonic": 133458.059171916}
+{"event": "overload_replaced", "time": 1794536890.314046, "monotonic": 133461.849616791, "uid": 18}
+{"event": "recognized", "time": 1794536893.738154, "monotonic": 133465.273886958, "uid": 17, "text": "미카소", "reason": "not_registered_interjection", "inference_seconds": 7.2438462499994785, "start": 133454.607324667, "speech_end": 133456.36736033298, "command": null}
+{"event": "continuous_speech", "time": 1794536894.122027, "monotonic": 133465.657777791, "uid": 20}
+{"event": "continuous_speech", "time": 1794536894.924771, "monotonic": 133466.460561125, "uid": 21}
+{"event": "continuous_speech", "time": 1794536898.0927832, "monotonic": 133469.628724083, "uid": 22}
+{"event": "continuous_speech", "time": 1794536900.105669, "monotonic": 133471.641706375, "uid": 23}
+{"event": "continuous_speech", "time": 1794536900.519047, "monotonic": 133472.05510475, "uid": 24}
+{"event": "recognized", "time": 1794536900.810343, "monotonic": 133472.346413791, "uid": 19, "text": "응", "reason": "not_registered_interjection", "inference_seconds": 7.059806959005073, "start": 133461.103510583, "speech_end": 133461.519501332, "command": null}
+{"event": "continuous_speech", "time": 1794536905.349634, "monotonic": 133476.885924125, "uid": 26}
+{"event": "continuous_speech", "time": 1794536905.733727, "monotonic": 133477.270036375, "uid": 27}
+{"event": "recognized", "time": 1794536908.588095, "monotonic": 133480.124540666, "uid": 25, "text": "계속 통과가 남았어", "reason": "not_registered_interjection", "inference_seconds": 6.12845879199449, "start": 133472.30395670902, "speech_end": 133473.64801412402, "command": null}
+{"event": "recognized", "time": 1794536914.4527092, "monotonic": 133485.989439416, "uid": 28, "text": "여기다가다가", "reason": "not_registered_interjection", "inference_seconds": 5.853910833015107, "start": 133477.328103958, "speech_end": 133478.704171291, "command": null}
+{"event": "deadline", "time": 1794536914.453426, "monotonic": 133485.990156083, "uid": 29}
+{"event": "recognized", "time": 1794536920.687511, "monotonic": 133492.224544291, "uid": 30, "text": "쪘어?", "reason": "not_registered_interjection", "inference_seconds": 5.94249787501758, "start": 133485.264446084, "speech_end": 133485.93645095802, "command": null}
+{"event": "deadline", "time": 1794536920.6881962, "monotonic": 133492.225228916, "uid": 31}
+{"event": "overload_replaced", "time": 1794536931.600492, "monotonic": 133503.138057208, "uid": 33}
+{"event": "recognized", "time": 1794536932.260355, "monotonic": 133503.797951833, "uid": 32, "text": "감동 받으셨어?", "reason": "not_registered_interjection", "inference_seconds": 8.01678558299318, "start": 133494.192791499, "speech_end": 133495.44088212497, "command": null}
+{"event": "overload_replaced", "time": 1794536935.337534, "monotonic": 133506.875280916, "uid": 35}
+{"event": "overload_replaced", "time": 1794536937.2879722, "monotonic": 133508.825814416, "uid": 36}
+{"event": "capture_gap", "time": 1794536938.405313, "monotonic": 133509.943211166}
+{"event": "capture_gap", "time": 1794536938.4561548, "monotonic": 133509.994054125}
+{"event": "recognized", "time": 1794536940.12169, "monotonic": 133511.65967025, "uid": 34, "text": "당장 당장", "reason": "not_registered_interjection", "inference_seconds": 7.848579957993934, "start": 133500.75295141598, "speech_end": 133502.80100500002, "command": null}
+{"event": "overload_replaced", "time": 1794536943.301261, "monotonic": 133514.839395875, "uid": 38}
+{"event": "recognized", "time": 1794536946.4128032, "monotonic": 133517.951089791, "uid": 37, "text": "응", "reason": "not_registered_interjection", "inference_seconds": 6.283753249997972, "start": 133507.92122383398, "speech_end": 133508.49722395802, "command": null}
+{"event": "recognized", "time": 1794536951.9982479, "monotonic": 133523.536808916, "uid": 39, "text": "인식을 잘하네", "reason": "not_registered_interjection", "inference_seconds": 5.572013540979242, "start": 133513.07336162496, "speech_end": 133514.513498249, "command": null}
+{"event": "deadline", "time": 1794536951.99873, "monotonic": 133523.537290041, "uid": 40}
+{"event": "overload_replaced", "time": 1794536957.86148, "monotonic": 133529.400326791, "uid": 42}
+{"event": "overload_replaced", "time": 1794536958.440181, "monotonic": 133529.97905575, "uid": 43}
+{"event": "recognized", "time": 1794536958.7104871, "monotonic": 133530.249375083, "uid": 41, "text": "고인을 했는데", "reason": "not_registered_interjection", "inference_seconds": 6.26627683400875, "start": 133522.833701333, "speech_end": 133523.633722625, "command": null}
+{"event": "recognized", "time": 1794536964.5619562, "monotonic": 133536.101129916, "uid": 44, "text": "감사합니다.", "reason": "not_registered_interjection", "inference_seconds": 5.8416210419964045, "start": 133529.393945499, "speech_end": 133529.649937916, "command": null}
+{"event": "session", "time": 1794537144.153445, "monotonic": 133715.701393791, "model": "mlx-community/whisper-small-mlx", "settings": {"model": "mlx-community/whisper-small-mlx", "word_timestamps": false, "language": "ko", "input_device": null, "output_device": null, "vad_start": 0.6, "vad_end": 0.35, "start_frames": 2, "silence_duration": 0.32, "pre_roll": 0.224, "min_speech": 0.128, "max_speech": 2.4, "overlap": 0.384, "max_latency": 10.0, "output_margin": 0.05, "echo_guard": 0.2, "max_frame_age": 0.25, "cooldown": 0.7, "min_avg_logprob": -0.8, "max_no_speech_prob": 0.55, "max_compression_ratio": 2.4, "min_word_probability": 0.35, "event_log": "logs/events.jsonl"}}
+{"event": "recognized", "time": 1794537148.959567, "monotonic": 133720.50774925, "uid": 1, "text": "얼수", "reason": "accepted", "inference_seconds": 0.7290130410110578, "start": 133718.52212599898, "speech_end": 133719.45023058302, "command": "얼쑤"}
+{"event": "playback_started", "time": 1794537148.968757, "monotonic": 133720.516940416, "uid": 1, "command": "얼쑤", "scheduled_dac_latency": 1.0690293029183522}
+{"event": "capture_gap", "time": 1794537150.280846, "monotonic": 133721.829093083}
+{"event": "recognized", "time": 1794537152.162264, "monotonic": 133723.71060325, "uid": 2, "text": "어때?", "reason": "not_registered_interjection", "inference_seconds": 0.5615381250099745, "start": 133722.170313416, "speech_end": 133722.810342791, "command": null}
+{"event": "recognized", "time": 1794537154.612936, "monotonic": 133726.1613945, "uid": 3, "text": "바로바로 나왔지", "reason": "not_registered_interjection", "inference_seconds": 0.7075562079844531, "start": 133723.130262833, "speech_end": 133725.114362917, "command": null}
+{"event": "recognized", "time": 1794537156.875426, "monotonic": 133728.423995, "uid": 4, "text": "감사합니다.", "reason": "not_registered_interjection", "inference_seconds": 0.5758372079872061, "start": 133727.19448391598, "speech_end": 133727.51459520802, "command": null}
+{"event": "continuous_speech", "time": 1794537160.906492, "monotonic": 133732.455258666, "uid": 5}
+{"event": "continuous_speech", "time": 1794537161.382206, "monotonic": 133732.930996375, "uid": 6}
+{"event": "continuous_speech", "time": 1794537164.714126, "monotonic": 133736.263079125, "uid": 7}
+{"event": "continuous_speech", "time": 1794537166.734402, "monotonic": 133738.283453541, "uid": 8}
+{"event": "continuous_speech", "time": 1794537168.742904, "monotonic": 133740.292053541, "uid": 9}
+{"event": "continuous_speech", "time": 1794537169.159797, "monotonic": 133740.708967333, "uid": 10}
+{"event": "recognized", "time": 1794537171.5522711, "monotonic": 133743.101557166, "uid": 11, "text": "아, 크로나 아니야", "reason": "not_registered_interjection", "inference_seconds": 0.9074551670055371, "start": 133740.95506929202, "speech_end": 133741.85113966602, "command": null}
+{"event": "recognized", "time": 1794537173.362454, "monotonic": 133744.911828625, "uid": 12, "text": "아직 얼 수밖에 안 넣어", "reason": "not_registered_interjection", "inference_seconds": 0.6091195420012809, "start": 133742.36313833302, "speech_end": 133743.963245666, "command": null}
+{"event": "recognized", "time": 1794537174.69723, "monotonic": 133746.2466695, "uid": 13, "text": "", "reason": "not_registered_interjection", "inference_seconds": 0.5365994169842452, "start": 133744.955280583, "speech_end": 133745.37132625002, "command": null}
+{"event": "recognized", "time": 1794537176.892883, "monotonic": 133748.442430166, "uid": 14, "text": "벌써?", "reason": "not_registered_interjection", "inference_seconds": 0.5590772090072278, "start": 133746.58732025, "speech_end": 133747.547407291, "command": null}
+{"event": "recognized", "time": 1794537180.524999, "monotonic": 133752.074723791, "uid": 15, "text": "벌써 이러네", "reason": "not_registered_interjection", "inference_seconds": 0.5681367500219494, "start": 133749.97943437498, "speech_end": 133751.163497041, "command": null}
+{"event": "recognized", "time": 1794537182.127896, "monotonic": 133753.677698916, "uid": 16, "text": "얼수", "reason": "low_logprob", "inference_seconds": 0.5515264589921571, "start": 133751.96354625002, "speech_end": 133752.79559716702, "command": null}
+{"event": "recognized", "time": 1794537185.029871, "monotonic": 133756.579815416, "uid": 17, "text": "얼쑤!", "reason": "accepted", "inference_seconds": 0.5915312909928616, "start": 133754.715786291, "speech_end": 133755.64380370904, "command": "얼쑤"}
+{"event": "playback_started", "time": 1794537185.042946, "monotonic": 133756.592891625, "uid": 17, "command": "얼쑤", "scheduled_dac_latency": 0.9492216779326554}
+{"event": "capture_gap", "time": 1794537186.341249, "monotonic": 133757.891257791}
+{"event": "recognized", "time": 1794537188.907315, "monotonic": 133760.457448916, "uid": 18, "text": "근데 얼 씌우만큼 없어?", "reason": "not_registered_interjection", "inference_seconds": 0.6269754170207307, "start": 133758.171867666, "speech_end": 133759.483973916, "command": null}
+{"event": "continuous_speech", "time": 1794537190.952461, "monotonic": 133762.502696416, "uid": 19}
+{"event": "continuous_speech", "time": 1794537192.486751, "monotonic": 133764.037062041, "uid": 20}
+{"event": "recognized", "time": 1794537193.944232, "monotonic": 133765.494612583, "uid": 21, "text": "네.", "reason": "not_registered_interjection", "inference_seconds": 0.8382397080131341, "start": 133764.02821691698, "speech_end": 133764.316172457, "command": null}
+{"event": "recognized", "time": 1794537206.1827571, "monotonic": 133777.733735208, "uid": 22, "text": "밤 배경 만들기", "reason": "not_registered_interjection", "inference_seconds": 0.6268276660121046, "start": 133775.164575542, "speech_end": 133776.764657249, "command": null}
+{"event": "recognized", "time": 1794537210.0962508, "monotonic": 133781.647420166, "uid": 23, "text": "어? 인식 잘한다.", "reason": "not_registered_interjection", "inference_seconds": 0.6088059169996995, "start": 133779.452760916, "speech_end": 133780.700837125, "command": null}
+{"event": "continuous_speech", "time": 1794537213.162632, "monotonic": 133784.713952041, "uid": 24}
+{"event": "continuous_speech", "time": 1794537213.347667, "monotonic": 133784.898996666, "uid": 25}
+{"event": "recognized", "time": 1794537214.484839, "monotonic": 133786.036223125, "uid": 26, "text": "", "reason": "not_registered_interjection", "inference_seconds": 0.5512156670156401, "start": 133784.89299624998, "speech_end": 133785.148999874, "command": null}
+{"event": "recognized", "time": 1794537216.3077278, "monotonic": 133787.859201291, "uid": 27, "text": "영어는 해?", "reason": "not_registered_interjection", "inference_seconds": 0.5862142920086626, "start": 133785.46902320802, "speech_end": 133786.94112387497, "command": null}
+{"event": "recognized", "time": 1794537218.7816079, "monotonic": 133790.3332015, "uid": 28, "text": "영어 안 했어", "reason": "not_registered_interjection", "inference_seconds": 0.5813889999990351, "start": 133787.613066541, "speech_end": 133789.40526949998, "command": null}
+{"event": "recognized", "time": 1794537224.830285, "monotonic": 133796.382173833, "uid": 29, "text": "얼씨구", "reason": "not_registered_interjection", "inference_seconds": 0.5632844170031603, "start": 133794.33344316602, "speech_end": 133795.485491166, "command": null}
+{"event": "recognized", "time": 1794537226.655057, "monotonic": 133798.207035, "uid": 30, "text": "다행히 샌테머리", "reason": "not_registered_interjection", "inference_seconds": 0.6246007919835392, "start": 133795.805427333, "speech_end": 133797.245558, "command": null}
+{"event": "recognized", "time": 1794537228.067667, "monotonic": 133799.619714666, "uid": 31, "text": "맛있겠다", "reason": "not_registered_interjection", "inference_seconds": 0.5575028339808341, "start": 133797.72559095902, "speech_end": 133798.71761837503, "command": null}
+{"event": "continuous_speech", "time": 1794537234.152352, "monotonic": 133805.704697041, "uid": 32}
+{"event": "continuous_speech", "time": 1794537236.171891, "monotonic": 133807.724334916, "uid": 33}
+{"event": "continuous_speech", "time": 1794537236.2310941, "monotonic": 133807.783541833, "uid": 34}
+{"event": "recognized", "time": 1794537240.991603, "monotonic": 133812.544282291, "uid": 35, "text": "우리 바위가 좀 더 잘...", "reason": "not_registered_interjection", "inference_seconds": 0.5932442500197794, "start": 133809.69402624998, "speech_end": 133811.614220042, "command": null}
+{"event": "recognized", "time": 1794537243.0447092, "monotonic": 133814.597488125, "uid": 36, "text": "빌려도 되고", "reason": "not_registered_interjection", "inference_seconds": 0.5902129999885801, "start": 133812.31815841596, "speech_end": 133813.66226479202, "command": null}
+{"event": "continuous_speech", "time": 1794537244.8461068, "monotonic": 133816.398974791, "uid": 37}
+{"event": "continuous_speech", "time": 1794537245.158706, "monotonic": 133816.711589208, "uid": 38}
+{"event": "continuous_speech", "time": 1794537247.562458, "monotonic": 133819.115458291, "uid": 39}
+{"event": "continuous_speech", "time": 1794537248.108118, "monotonic": 133819.661145291, "uid": 40}
+{"event": "recognized", "time": 1794537252.019951, "monotonic": 133823.573169041, "uid": 41, "text": "응", "reason": "not_registered_interjection", "inference_seconds": 0.5478232919995207, "start": 133822.23864754097, "speech_end": 133822.68662291698, "command": null}
+{"event": "recognized", "time": 1794537256.1054232, "monotonic": 133827.658840125, "uid": 42, "text": "됐어.", "reason": "not_registered_interjection", "inference_seconds": 0.7255810830101836, "start": 133825.758834957, "speech_end": 133826.590967208, "command": null}
+{"event": "recognized", "time": 1794537259.425992, "monotonic": 133830.97957125, "uid": 43, "text": "옵스", "reason": "not_registered_interjection", "inference_seconds": 0.6262253329914529, "start": 133829.342940541, "speech_end": 133830.01497683302, "command": null}
+{"event": "session", "time": 1794539767.898845, "monotonic": 136339.573042083, "model": "mlx-community/whisper-small-mlx", "settings": {"model": "mlx-community/whisper-small-mlx", "word_timestamps": false, "language": "ko", "input_device": null, "output_device": null, "vad_start": 0.6, "vad_end": 0.35, "start_frames": 2, "silence_duration": 0.32, "pre_roll": 0.224, "min_speech": 0.128, "max_speech": 2.4, "overlap": 0.384, "max_latency": 10.0, "output_margin": 0.05, "echo_guard": 0.2, "max_frame_age": 0.25, "cooldown": 0.7, "min_avg_logprob": -0.8, "max_no_speech_prob": 0.55, "max_compression_ratio": 2.4, "min_word_probability": 0.35, "event_log": "logs/events.jsonl", "voice_mode": "model", "voice_min_seconds": 0.16, "voice_min_confidence": 0.8}}
+{"event": "recognized", "time": 1794539772.401398, "monotonic": 136344.07578875, "uid": 1, "text": "", "reason": "not_registered_interjection", "inference_seconds": 1.8722190000116825, "start": 136340.80880620802, "speech_end": 136341.86488233303, "command": null, "voice": {"label": "female", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.9887378215789795, "active_seconds": 0.27, "reason": "classified"}, "sound_candidates": []}
+{"event": "capture_gap", "time": 1794539776.65359, "monotonic": 136348.328159416}
+{"event": "capture_gap", "time": 1794539776.65677, "monotonic": 136348.331337583}
+{"event": "recognized", "time": 1794539778.1518989, "monotonic": 136349.826532416, "uid": 2, "text": "얼수", "reason": "low_logprob", "inference_seconds": 1.639527833001921, "start": 136346.79322358302, "speech_end": 136347.849202875, "command": null, "voice": {"label": "female", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.9953392744064331, "active_seconds": 0.45, "reason": "classified"}, "sound_candidates": []}
+{"event": "recognized", "time": 1794539788.147475, "monotonic": 136359.822560791, "uid": 3, "text": "얼쑤!", "reason": "accepted", "inference_seconds": 0.9102982499753125, "start": 136357.64155074902, "speech_end": 136358.56962216602, "command": "얼쑤", "voice": {"label": "female", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.9793374538421631, "active_seconds": 0.42, "reason": "classified"}, "sound_candidates": ["/Users/yoonseon/Desktop/2026/SCG/추임새/voice_trigger/여_얼쑤.wav"]}
+{"event": "sound_selected", "time": 1794539788.1563962, "monotonic": 136359.831482333, "uid": 3, "command": "얼쑤", "sound": "여_얼쑤.wav"}
+{"event": "playback_started", "time": 1794539788.156533, "monotonic": 136359.831618875, "uid": 3, "command": "얼쑤", "scheduled_dac_latency": 1.266972511948552}
+{"event": "capture_gap", "time": 1794539789.050463, "monotonic": 136360.72559075}
+{"event": "recognized", "time": 1794539793.1395268, "monotonic": 136364.814844875, "uid": 4, "text": "잘한다", "reason": "accepted", "inference_seconds": 0.8555508330173325, "start": 136362.857807792, "speech_end": 136363.62587383302, "command": "잘한다", "voice": {"label": "female", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.9817808866500854, "active_seconds": 0.47, "reason": "classified"}, "sound_candidates": ["/Users/yoonseon/Desktop/2026/SCG/추임새/voice_trigger/여_잘한다.wav"]}
+{"event": "sound_selected", "time": 1794539793.148414, "monotonic": 136364.823732375, "uid": 4, "command": "잘한다", "sound": "여_잘한다.wav"}
+{"event": "playback_started", "time": 1794539793.1485069, "monotonic": 136364.823825166, "uid": 4, "command": "잘한다", "scheduled_dac_latency": 1.2032179689558689}
+{"event": "capture_gap", "time": 1794539794.936723, "monotonic": 136366.612125166}
+{"event": "recognized", "time": 1794539796.701822, "monotonic": 136368.377306541, "uid": 5, "text": "좋다", "reason": "accepted", "inference_seconds": 0.6669452500063926, "start": 136366.665959375, "speech_end": 136367.370022541, "command": "좋다", "voice": {"label": "female", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.9864094853401184, "active_seconds": 0.25, "reason": "classified"}, "sound_candidates": ["/Users/yoonseon/Desktop/2026/SCG/추임새/voice_trigger/여_좋다.wav"]}
+{"event": "sound_selected", "time": 1794539796.7153978, "monotonic": 136368.390882541, "uid": 5, "command": "좋다", "sound": "여_좋다.wav"}
+{"event": "playback_started", "time": 1794539796.7154691, "monotonic": 136368.390953583, "uid": 5, "command": "좋다", "scheduled_dac_latency": 1.0234868449624628}
+{"event": "capture_gap", "time": 1794539798.106281, "monotonic": 136369.781831291}
+{"event": "recognized", "time": 1794539803.1923058, "monotonic": 136374.868096166, "uid": 6, "text": "아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아, 아", "reason": "not_registered_interjection", "inference_seconds": 2.9079188339819666, "start": 136371.01821091597, "speech_end": 136371.62617483299, "command": null, "voice": {"label": "unknown", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": null, "active_seconds": 0.15, "reason": "insufficient_audio"}, "sound_candidates": []}
+{"event": "recognized", "time": 1794539811.123341, "monotonic": 136382.799508333, "uid": 7, "text": "50명인데?", "reason": "not_registered_interjection", "inference_seconds": 0.9101157080149278, "start": 136380.490586208, "speech_end": 136381.546650458, "command": null, "voice": {"label": "female", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.9636402726173401, "active_seconds": 0.51, "reason": "classified"}, "sound_candidates": []}
+{"event": "recognized", "time": 1794539812.097307, "monotonic": 136383.77352, "uid": 8, "text": "", "reason": "not_registered_interjection", "inference_seconds": 0.4426765829848591, "start": 136382.15467850002, "speech_end": 136382.98664195798, "command": null, "voice": {"label": "female", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.9666561484336853, "active_seconds": 0.29, "reason": "classified"}, "sound_candidates": []}
+{"event": "recognized", "time": 1794539813.932718, "monotonic": 136385.609019166, "uid": 9, "text": "개왔네", "reason": "not_registered_interjection", "inference_seconds": 0.6556164579815231, "start": 136384.01075541702, "speech_end": 136384.61876412499, "command": null, "voice": {"label": "female", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.9652430415153503, "active_seconds": 0.33, "reason": "classified"}, "sound_candidates": []}
+{"event": "continuous_speech", "time": 1794539820.725016, "monotonic": 136392.401642083, "uid": 10}
+{"event": "continuous_speech", "time": 1794539821.048529, "monotonic": 136392.725170333, "uid": 11}
+{"event": "continuous_speech", "time": 1794539823.4756742, "monotonic": 136395.152431333, "uid": 12}
+{"event": "continuous_speech", "time": 1794539823.672457, "monotonic": 136395.349224541, "uid": 13}
+{"event": "recognized", "time": 1794539826.831698, "monotonic": 136398.508616291, "uid": 14, "text": "눌러버렸어", "reason": "not_registered_interjection", "inference_seconds": 0.8744136659952346, "start": 136396.45929974897, "speech_end": 136397.291272875, "command": null, "voice": {"label": "female", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.9957072138786316, "active_seconds": 0.36, "reason": "classified"}, "sound_candidates": []}
+{"event": "session", "time": 1794543105.084378, "monotonic": 138224.887578958, "model": "mlx-community/whisper-small-mlx", "settings": {"model": "mlx-community/whisper-small-mlx", "word_timestamps": false, "language": "ko", "input_device": null, "output_device": null, "vad_start": 0.6, "vad_end": 0.35, "start_frames": 2, "silence_duration": 0.32, "pre_roll": 0.224, "min_speech": 0.128, "max_speech": 2.4, "overlap": 0.384, "max_latency": 10.0, "output_margin": 0.05, "echo_guard": 0.2, "max_frame_age": 0.25, "cooldown": 0.7, "min_avg_logprob": -0.8, "max_no_speech_prob": 0.55, "max_compression_ratio": 2.4, "min_word_probability": 0.35, "event_log": "logs/events.jsonl", "voice_mode": "model", "voice_min_seconds": 0.16, "voice_min_confidence": 0.8}}
+{"event": "continuous_speech", "time": 1794543110.610868, "monotonic": 138230.414333416, "uid": 2}
+{"event": "continuous_speech", "time": 1794543112.015239, "monotonic": 138231.81877175, "uid": 3}
+{"event": "recognized", "time": 1794543114.28235, "monotonic": 138234.085990708, "uid": 1, "text": "고추장", "reason": "not_registered_interjection", "inference_seconds": 6.0629279160057195, "start": 138226.022544083, "speech_end": 138227.68667641602, "command": null, "voice": {"label": "male", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.9991481304168701, "active_seconds": 1.11, "reason": "classified"}, "sound_candidates": []}
+{"event": "recognized", "time": 1794543115.407328, "monotonic": 138235.211022833, "uid": 4, "text": "", "reason": "not_registered_interjection", "inference_seconds": 1.1128530419955496, "start": 138232.10292687404, "speech_end": 138232.614986125, "command": null, "voice": {"label": "male", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.9991835951805115, "active_seconds": 0.74, "reason": "classified"}, "sound_candidates": []}
+{"event": "recognized", "time": 1794543116.045896, "monotonic": 138235.849621458, "uid": 5, "text": "영상이 좀..", "reason": "not_registered_interjection", "inference_seconds": 0.632887457992183, "start": 138233.287021333, "speech_end": 138234.310979083, "command": null, "voice": {"label": "male", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.9991796612739563, "active_seconds": 0.93, "reason": "classified"}, "sound_candidates": []}
+{"event": "recognized", "time": 1794543116.7067919, "monotonic": 138236.51054875, "uid": 6, "text": "", "reason": "not_registered_interjection", "inference_seconds": 0.6531728330010083, "start": 138234.69502387402, "speech_end": 138235.207034958, "command": null, "voice": {"label": "male", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.9673483371734619, "active_seconds": 0.24, "reason": "classified"}, "sound_candidates": []}
+{"event": "recognized", "time": 1794543119.982807, "monotonic": 138239.786720541, "uid": 7, "text": "이거 다 뭐 안 해봐", "reason": "not_registered_interjection", "inference_seconds": 0.9770830409834161, "start": 138237.47921120803, "speech_end": 138238.47123595802, "command": null, "voice": {"label": "unknown", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.7065722942352295, "active_seconds": 0.66, "reason": "low_voice_score"}, "sound_candidates": []}
+{"event": "recognized", "time": 1794543120.9202921, "monotonic": 138240.724250375, "uid": 8, "text": "아", "reason": "not_registered_interjection", "inference_seconds": 0.6771352910145652, "start": 138238.791272083, "speech_end": 138239.68727041702, "command": null, "voice": {"label": "female", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.926056444644928, "active_seconds": 0.52, "reason": "classified"}, "sound_candidates": []}
+{"event": "continuous_speech", "time": 1794543122.744858, "monotonic": 138242.548904708, "uid": 9}
+{"event": "continuous_speech", "time": 1794543124.753303, "monotonic": 138244.557450583, "uid": 10}
+{"event": "continuous_speech", "time": 1794543126.772501, "monotonic": 138246.57674075, "uid": 11}
+{"event": "continuous_speech", "time": 1794543127.574255, "monotonic": 138247.378532541, "uid": 12}
+{"event": "continuous_speech", "time": 1794543130.802111, "monotonic": 138250.606543416, "uid": 13}
+{"event": "continuous_speech", "time": 1794543131.056509, "monotonic": 138250.860953708, "uid": 14}
+{"event": "recognized", "time": 1794543133.2289448, "monotonic": 138253.033493166, "uid": 15, "text": "잘한다.", "reason": "accepted", "inference_seconds": 0.817743083985988, "start": 138251.111782083, "speech_end": 138251.879797708, "command": "잘한다", "voice": {"label": "female", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.9707104563713074, "active_seconds": 0.47, "reason": "classified"}, "sound_candidates": ["/Users/yoonseon/Desktop/2026/SCG/추임새/voice_trigger/여_잘한다.wav"]}
+{"event": "sound_selected", "time": 1794543133.245875, "monotonic": 138253.050424, "uid": 15, "command": "잘한다", "sound": "여_잘한다.wav"}
+{"event": "playback_started", "time": 1794543133.245963, "monotonic": 138253.050511625, "uid": 15, "command": "잘한다", "scheduled_dac_latency": 1.1679079289315268}
+{"event": "capture_gap", "time": 1794543135.0258088, "monotonic": 138254.8304425}
+{"event": "recognized", "time": 1794543136.4562602, "monotonic": 138256.260962083, "uid": 16, "text": "잘한다.", "reason": "accepted", "inference_seconds": 0.6568842910055537, "start": 138254.79197475, "speech_end": 138255.27200908298, "command": "잘한다", "voice": {"label": "female", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.9341486096382141, "active_seconds": 0.35, "reason": "classified"}, "sound_candidates": ["/Users/yoonseon/Desktop/2026/SCG/추임새/voice_trigger/여_잘한다.wav"]}
+{"event": "sound_selected", "time": 1794543136.465154, "monotonic": 138256.269856916, "uid": 16, "command": "잘한다", "sound": "여_잘한다.wav"}
+{"event": "playback_started", "time": 1794543136.4652271, "monotonic": 138256.269929333, "uid": 16, "command": "잘한다", "scheduled_dac_latency": 1.0034172619925812}
+{"event": "capture_gap", "time": 1794543138.265146, "monotonic": 138258.0699355}
+{"event": "recognized", "time": 1794543139.752736, "monotonic": 138259.557595958, "uid": 17, "text": "", "reason": "not_registered_interjection", "inference_seconds": 0.6772763750050217, "start": 138258.248163666, "speech_end": 138258.53614775, "command": null, "voice": {"label": "male", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.9991727471351624, "active_seconds": 0.18, "reason": "classified"}, "sound_candidates": []}
+{"event": "continuous_speech", "time": 1794543141.6220212, "monotonic": 138261.426971416, "uid": 18}
+{"event": "continuous_speech", "time": 1794543143.6422029, "monotonic": 138263.447249583, "uid": 19}
+{"event": "continuous_speech", "time": 1794543145.651863, "monotonic": 138265.457006208, "uid": 20}
+{"event": "continuous_speech", "time": 1794543147.6715488, "monotonic": 138267.476788583, "uid": 21}
+{"event": "continuous_speech", "time": 1794543149.3320131, "monotonic": 138269.137332916, "uid": 22}
+{"event": "continuous_speech", "time": 1794543152.466041, "monotonic": 138272.271510875, "uid": 23}
+{"event": "continuous_speech", "time": 1794543154.48612, "monotonic": 138274.29168575, "uid": 24}
+{"event": "continuous_speech", "time": 1794543154.579263, "monotonic": 138274.384833541, "uid": 25}
+{"event": "recognized", "time": 1794543157.190937, "monotonic": 138276.996631958, "uid": 26, "text": "오케이", "reason": "not_registered_interjection", "inference_seconds": 1.0955830829916522, "start": 138274.888891375, "speech_end": 138275.56095783302, "command": null, "voice": {"label": "male", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.999160885810852, "active_seconds": 0.52, "reason": "classified"}, "sound_candidates": []}
+{"event": "continuous_speech", "time": 1794543158.561737, "monotonic": 138278.36749875, "uid": 27}
+{"event": "continuous_speech", "time": 1794543160.570237, "monotonic": 138280.376093875, "uid": 28}
+{"event": "continuous_speech", "time": 1794543162.578086, "monotonic": 138282.384039708, "uid": 29}
+{"event": "continuous_speech", "time": 1794543164.981832, "monotonic": 138284.787900291, "uid": 30}
+{"event": "continuous_speech", "time": 1794543166.8394198, "monotonic": 138286.645576833, "uid": 31}
+{"event": "continuous_speech", "time": 1794543169.428515, "monotonic": 138289.234796625, "uid": 32}
+{"event": "continuous_speech", "time": 1794543171.44858, "monotonic": 138291.254958, "uid": 33}
+{"event": "continuous_speech", "time": 1794543173.456172, "monotonic": 138293.262645583, "uid": 34}
+{"event": "continuous_speech", "time": 1794543175.477192, "monotonic": 138295.28376275, "uid": 35}
+{"event": "continuous_speech", "time": 1794543177.497758, "monotonic": 138297.304425791, "uid": 36}
+{"event": "continuous_speech", "time": 1794543179.5059252, "monotonic": 138299.312688625, "uid": 37}
+{"event": "continuous_speech", "time": 1794543181.271138, "monotonic": 138301.077986333, "uid": 38}
+{"event": "recognized", "time": 1794543183.964096, "monotonic": 138303.771072625, "uid": 39, "text": "마이크 여기 오세요", "reason": "not_registered_interjection", "inference_seconds": 0.6056963340088259, "start": 138301.06605029097, "speech_end": 138302.826248416, "command": null, "voice": {"label": "unknown", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": null, "active_seconds": 0.07, "reason": "insufficient_audio"}, "sound_candidates": []}
+{"event": "recognized", "time": 1794543185.529506, "monotonic": 138305.336556875, "uid": 40, "text": "알 수", "reason": "not_registered_interjection", "inference_seconds": 0.6697742089745589, "start": 138303.530193166, "speech_end": 138304.330235417, "command": null, "voice": {"label": "female", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.9949628114700317, "active_seconds": 0.35, "reason": "classified"}, "sound_candidates": []}
+{"event": "recognized", "time": 1794543188.804605, "monotonic": 138308.611813, "uid": 41, "text": "알았어", "reason": "not_registered_interjection", "inference_seconds": 0.6244174159946851, "start": 138307.08242166604, "speech_end": 138307.658397791, "command": null, "voice": {"label": "female", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.9953468441963196, "active_seconds": 0.36, "reason": "classified"}, "sound_candidates": []}
+{"event": "recognized", "time": 1794543189.906582, "monotonic": 138309.713843041, "uid": 42, "text": "얼수!", "reason": "accepted", "inference_seconds": 0.4120613750128541, "start": 138307.978388291, "speech_end": 138308.970480708, "command": "얼쑤", "voice": {"label": "female", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.9605191946029663, "active_seconds": 0.48, "reason": "classified"}, "sound_candidates": ["/Users/yoonseon/Desktop/2026/SCG/추임새/voice_trigger/여_얼쑤.wav"]}
+{"event": "sound_selected", "time": 1794543189.919832, "monotonic": 138309.727093125, "uid": 42, "command": "얼쑤", "sound": "여_얼쑤.wav"}
+{"event": "playback_started", "time": 1794543189.9199328, "monotonic": 138309.727194583, "uid": 42, "command": "얼쑤", "scheduled_dac_latency": 0.7539335529436357}
+{"event": "capture_gap", "time": 1794543190.800174, "monotonic": 138310.607478208}
+{"event": "recognized", "time": 1794543193.5871282, "monotonic": 138313.394565333, "uid": 43, "text": "아 됐다 됐다!", "reason": "not_registered_interjection", "inference_seconds": 0.9792629999865312, "start": 138310.602472999, "speech_end": 138312.07453525002, "command": null, "voice": {"label": "male", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.8588999509811401, "active_seconds": 0.82, "reason": "classified"}, "sound_candidates": []}
+{"event": "recognized", "time": 1794543196.2802649, "monotonic": 138316.087831125, "uid": 44, "text": "얼쑤! 카메라 어디있습니다", "reason": "not_registered_interjection", "inference_seconds": 0.7345529169833753, "start": 138313.258595708, "speech_end": 138315.018720375, "command": null, "voice": {"label": "female", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.9950856566429138, "active_seconds": 0.47, "reason": "classified"}, "sound_candidates": []}
+{"event": "recognized", "time": 1794543198.12831, "monotonic": 138317.935963875, "uid": 45, "text": "뵌서의 결인", "reason": "not_registered_interjection", "inference_seconds": 0.6869595420139376, "start": 138316.042754583, "speech_end": 138316.9068505, "command": null, "voice": {"label": "female", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.8894219398498535, "active_seconds": 0.96, "reason": "classified"}, "sound_candidates": []}
+{"event": "recognized", "time": 1794543200.506437, "monotonic": 138320.314205458, "uid": 46, "text": "내장인다고?", "reason": "not_registered_interjection", "inference_seconds": 0.7003898750117514, "start": 138318.02687995802, "speech_end": 138319.274922291, "command": null, "voice": {"label": "female", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.9961218237876892, "active_seconds": 0.86, "reason": "classified"}, "sound_candidates": []}
+{"event": "recognized", "time": 1794543202.1317918, "monotonic": 138321.939638041, "uid": 47, "text": "나 왜 저러는 못 봤지?", "reason": "not_registered_interjection", "inference_seconds": 0.7055737080227118, "start": 138319.594937416, "speech_end": 138320.906988458, "command": null, "voice": {"label": "female", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.9333110451698303, "active_seconds": 0.93, "reason": "classified"}, "sound_candidates": []}
+{"event": "recognized", "time": 1794543204.082376, "monotonic": 138323.89031475, "uid": 48, "text": "너다리가 아닌가 그러면?", "reason": "not_registered_interjection", "inference_seconds": 0.7198647079931106, "start": 138321.322962333, "speech_end": 138322.827135375, "command": null, "voice": {"label": "male", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.9707976579666138, "active_seconds": 1.27, "reason": "classified"}, "sound_candidates": []}
+{"event": "recognized", "time": 1794543206.2881558, "monotonic": 138326.096200666, "uid": 49, "text": "너 어떠졌는데?", "reason": "not_registered_interjection", "inference_seconds": 0.6849397090263665, "start": 138323.49909320698, "speech_end": 138325.067263042, "command": null, "voice": {"label": "female", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.9680553078651428, "active_seconds": 0.76, "reason": "classified"}, "sound_candidates": []}
+{"event": "continuous_speech", "time": 1794543208.4380789, "monotonic": 138328.246227291, "uid": 50}
+{"event": "continuous_speech", "time": 1794543208.530147, "monotonic": 138328.338300208, "uid": 51}
+{"event": "recognized", "time": 1794543211.002073, "monotonic": 138330.810343583, "uid": 52, "text": "어?", "reason": "not_registered_interjection", "inference_seconds": 0.6368060000240803, "start": 138328.907304791, "speech_end": 138329.835456208, "command": null, "voice": {"label": "unknown", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.5607073903083801, "active_seconds": 0.21, "reason": "low_voice_score"}, "sound_candidates": []}
+{"event": "recognized", "time": 1794543214.0572171, "monotonic": 138333.865633333, "uid": 53, "text": "또 나려는 거야?", "reason": "not_registered_interjection", "inference_seconds": 0.7144993750262074, "start": 138331.0195235, "speech_end": 138332.81160287402, "command": null, "voice": {"label": "male", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.9465134739875793, "active_seconds": 1.05, "reason": "classified"}, "sound_candidates": []}
+{"event": "recognized", "time": 1794543214.60303, "monotonic": 138334.411472833, "uid": 54, "text": "", "reason": "not_registered_interjection", "inference_seconds": 0.5393468329857569, "start": 138333.13149345902, "speech_end": 138333.35561129104, "command": null, "voice": {"label": "unknown", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": null, "active_seconds": 0.06, "reason": "insufficient_audio"}, "sound_candidates": []}
+{"event": "continuous_speech", "time": 1794543216.85406, "monotonic": 138336.662611, "uid": 55}
+{"event": "continuous_speech", "time": 1794543218.875504, "monotonic": 138338.684152333, "uid": 56}
+{"event": "continuous_speech", "time": 1794543219.641112, "monotonic": 138339.449796333, "uid": 57}
+{"event": "recognized", "time": 1794543231.9007502, "monotonic": 138351.710020375, "uid": 58, "text": "올려주세요", "reason": "not_registered_interjection", "inference_seconds": 0.9936172919988167, "start": 138349.132230249, "speech_end": 138350.38031625, "command": null, "voice": {"label": "unknown", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.6497397422790527, "active_seconds": 0.95, "reason": "low_voice_score"}, "sound_candidates": []}
+{"event": "recognized", "time": 1794543232.549684, "monotonic": 138352.358986291, "uid": 59, "text": "응", "reason": "not_registered_interjection", "inference_seconds": 0.4575428749958519, "start": 138351.180401417, "speech_end": 138351.564438208, "command": null, "voice": {"label": "unknown", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": null, "active_seconds": 0.15, "reason": "insufficient_audio"}, "sound_candidates": []}
+{"event": "continuous_speech", "time": 1794543241.015049, "monotonic": 138360.824757208, "uid": 60}
+{"event": "continuous_speech", "time": 1794543243.035104, "monotonic": 138362.844908125, "uid": 61}
+{"event": "continuous_speech", "time": 1794543245.044273, "monotonic": 138364.854173458, "uid": 62}
+{"event": "continuous_speech", "time": 1794543248.213345, "monotonic": 138368.023397666, "uid": 63}
+{"event": "continuous_speech", "time": 1794543250.233373, "monotonic": 138370.043522458, "uid": 64}
+{"event": "continuous_speech", "time": 1794543252.2423732, "monotonic": 138372.052618166, "uid": 65}
+{"event": "continuous_speech", "time": 1794543253.240778, "monotonic": 138373.051070666, "uid": 66}
+{"event": "continuous_speech", "time": 1794543257.210597, "monotonic": 138377.021080541, "uid": 67}
+{"event": "continuous_speech", "time": 1794543259.2187798, "monotonic": 138379.029359666, "uid": 68}
+{"event": "continuous_speech", "time": 1794543260.345006, "monotonic": 138380.155638833, "uid": 69}
+{"event": "continuous_speech", "time": 1794543263.352161, "monotonic": 138383.162937333, "uid": 70}
+{"event": "continuous_speech", "time": 1794543265.36129, "monotonic": 138385.172162708, "uid": 71}
+{"event": "continuous_speech", "time": 1794543267.380927, "monotonic": 138387.191896708, "uid": 72}
+{"event": "continuous_speech", "time": 1794543269.4017322, "monotonic": 138389.212798041, "uid": 73}
+{"event": "continuous_speech", "time": 1794543271.410265, "monotonic": 138391.221427833, "uid": 74}
+{"event": "continuous_speech", "time": 1794543273.4307342, "monotonic": 138393.241994083, "uid": 75}
+{"event": "continuous_speech", "time": 1794543275.4497468, "monotonic": 138395.261103541, "uid": 76}
+{"event": "continuous_speech", "time": 1794543277.45769, "monotonic": 138397.269141833, "uid": 77}
+{"event": "continuous_speech", "time": 1794543279.479224, "monotonic": 138399.29077275, "uid": 78}
+{"event": "continuous_speech", "time": 1794543281.499302, "monotonic": 138401.310947708, "uid": 79}
+{"event": "continuous_speech", "time": 1794543283.5079732, "monotonic": 138403.319715041, "uid": 80}
+{"event": "continuous_speech", "time": 1794543285.528137, "monotonic": 138405.339975416, "uid": 81}
+{"event": "continuous_speech", "time": 1794543287.547185, "monotonic": 138407.359120083, "uid": 82}
+{"event": "continuous_speech", "time": 1794543289.556685, "monotonic": 138409.368716333, "uid": 83}
+{"event": "continuous_speech", "time": 1794543291.576535, "monotonic": 138411.388663625, "uid": 84}
+{"event": "continuous_speech", "time": 1794543291.9238741, "monotonic": 138411.736018666, "uid": 85}
+{"event": "continuous_speech", "time": 1794543294.45617, "monotonic": 138414.268435166, "uid": 86}
+{"event": "continuous_speech", "time": 1794543296.464834, "monotonic": 138416.277196125, "uid": 87}
+{"event": "continuous_speech", "time": 1794543298.3921752, "monotonic": 138418.204629375, "uid": 88}
+{"event": "continuous_speech", "time": 1794543300.8180852, "monotonic": 138420.630655583, "uid": 89}
+{"event": "continuous_speech", "time": 1794543301.236131, "monotonic": 138421.048721, "uid": 90}
+{"event": "continuous_speech", "time": 1794543303.638818, "monotonic": 138423.451523375, "uid": 91}
+{"event": "continuous_speech", "time": 1794543305.659713, "monotonic": 138425.472515166, "uid": 92}
+{"event": "continuous_speech", "time": 1794543306.3214562, "monotonic": 138426.134289458, "uid": 93}
+{"event": "continuous_speech", "time": 1794543308.887, "monotonic": 138428.699955875, "uid": 94}
+{"event": "continuous_speech", "time": 1794543310.907378, "monotonic": 138430.720431791, "uid": 95}
+{"event": "continuous_speech", "time": 1794543312.9148219, "monotonic": 138432.727971458, "uid": 96}
+{"event": "continuous_speech", "time": 1794543313.077773, "monotonic": 138432.890929958, "uid": 97}
+{"event": "recognized", "time": 1794543316.0638552, "monotonic": 138435.877154, "uid": 98, "text": "풀 안쳤어.", "reason": "not_registered_interjection", "inference_seconds": 1.7829573749913834, "start": 138432.94420841598, "speech_end": 138433.74414875, "command": null, "voice": {"label": "female", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.9952397346496582, "active_seconds": 0.24, "reason": "classified"}, "sound_candidates": []}
+{"event": "continuous_speech", "time": 1794543316.665889, "monotonic": 138436.479218375, "uid": 99}
+{"event": "continuous_speech", "time": 1794543318.6742022, "monotonic": 138438.487627458, "uid": 100}
+{"event": "continuous_speech", "time": 1794543320.695037, "monotonic": 138440.508558791, "uid": 101}
+{"event": "continuous_speech", "time": 1794543322.713744, "monotonic": 138442.5273625, "uid": 102}
+{"event": "continuous_speech", "time": 1794543324.7223868, "monotonic": 138444.536101208, "uid": 103}
+{"event": "continuous_speech", "time": 1794543326.742833, "monotonic": 138446.556644958, "uid": 104}
+{"event": "continuous_speech", "time": 1794543328.763593, "monotonic": 138448.577501333, "uid": 105}
+{"event": "continuous_speech", "time": 1794543330.7722502, "monotonic": 138450.5862545, "uid": 106}
+{"event": "continuous_speech", "time": 1794543332.0260348, "monotonic": 138451.8400985, "uid": 107}
+{"event": "continuous_speech", "time": 1794543335.9265978, "monotonic": 138455.740848625, "uid": 108}
+{"event": "continuous_speech", "time": 1794543337.9459789, "monotonic": 138457.760326666, "uid": 109}
+{"event": "continuous_speech", "time": 1794543339.955791, "monotonic": 138459.770234416, "uid": 110}
+{"event": "continuous_speech", "time": 1794543341.975519, "monotonic": 138461.790059125, "uid": 111}
+{"event": "continuous_speech", "time": 1794543343.995991, "monotonic": 138463.81062825, "uid": 112}
+{"event": "continuous_speech", "time": 1794543346.011179, "monotonic": 138465.825913166, "uid": 113}
+{"event": "continuous_speech", "time": 1794543348.0245912, "monotonic": 138467.839421083, "uid": 114}
+{"event": "continuous_speech", "time": 1794543350.0333061, "monotonic": 138469.848232333, "uid": 115}
+{"event": "continuous_speech", "time": 1794543350.647888, "monotonic": 138470.462842708, "uid": 116}
+{"event": "continuous_speech", "time": 1794543353.143355, "monotonic": 138472.958430291, "uid": 117}
+{"event": "continuous_speech", "time": 1794543354.583931, "monotonic": 138474.399074458, "uid": 118}
+{"event": "continuous_speech", "time": 1794543356.986428, "monotonic": 138476.801686541, "uid": 119}
+{"event": "continuous_speech", "time": 1794543358.99563, "monotonic": 138478.81098525, "uid": 120}
+{"event": "continuous_speech", "time": 1794543359.192802, "monotonic": 138479.008166125, "uid": 121}
+{"event": "continuous_speech", "time": 1794543361.746782, "monotonic": 138481.562268708, "uid": 122}
+{"event": "continuous_speech", "time": 1794543363.767532, "monotonic": 138483.583115958, "uid": 123}
+{"event": "continuous_speech", "time": 1794543365.7876549, "monotonic": 138485.603335166, "uid": 124}
+{"event": "continuous_speech", "time": 1794543367.796403, "monotonic": 138487.612179166, "uid": 125}
+{"event": "continuous_speech", "time": 1794543368.016151, "monotonic": 138487.831937875, "uid": 126}
+{"event": "continuous_speech", "time": 1794543370.454771, "monotonic": 138490.270674916, "uid": 127}
+{"event": "continuous_speech", "time": 1794543371.697032, "monotonic": 138491.512995541, "uid": 128}
+{"event": "continuous_speech", "time": 1794543374.227995, "monotonic": 138494.044079125, "uid": 129}
+{"event": "continuous_speech", "time": 1794543376.177595, "monotonic": 138495.993772416, "uid": 130}
+{"event": "continuous_speech", "time": 1794543380.055764, "monotonic": 138499.872127458, "uid": 131}
+{"event": "continuous_speech", "time": 1794543380.659443, "monotonic": 138500.475834791, "uid": 132}
+{"event": "recognized", "time": 1794543383.713412, "monotonic": 138503.529949125, "uid": 133, "text": "", "reason": "not_registered_interjection", "inference_seconds": 1.7310442089801654, "start": 138500.56331587498, "speech_end": 138501.45933491603, "command": null, "voice": {"label": "female", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.9496588110923767, "active_seconds": 0.4, "reason": "classified"}, "sound_candidates": []}
+{"event": "recognized", "time": 1794543384.294176, "monotonic": 138504.110740916, "uid": 134, "text": "감사합니다.", "reason": "not_registered_interjection", "inference_seconds": 0.5643898329872172, "start": 138501.77930441598, "speech_end": 138502.80339216598, "command": null, "voice": {"label": "female", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.9117242693901062, "active_seconds": 0.73, "reason": "classified"}, "sound_candidates": []}
+{"event": "continuous_speech", "time": 1794543385.780148, "monotonic": 138505.596784958, "uid": 135}
+{"event": "continuous_speech", "time": 1794543386.325711, "monotonic": 138506.142374, "uid": 136}
+{"event": "continuous_speech", "time": 1794543389.0192251, "monotonic": 138508.836017291, "uid": 137}
+{"event": "continuous_speech", "time": 1794543391.027574, "monotonic": 138510.844463166, "uid": 138}
+{"event": "continuous_speech", "time": 1794543393.047669, "monotonic": 138512.864653666, "uid": 139}
+{"event": "continuous_speech", "time": 1794543395.0681732, "monotonic": 138514.8852545, "uid": 140}
+{"event": "continuous_speech", "time": 1794543396.5655968, "monotonic": 138516.3827505, "uid": 141}
+{"event": "continuous_speech", "time": 1794543398.9689658, "monotonic": 138518.786234833, "uid": 142}
+{"event": "continuous_speech", "time": 1794543400.976417, "monotonic": 138520.793781375, "uid": 143}
+{"event": "continuous_speech", "time": 1794543402.9973602, "monotonic": 138522.814821833, "uid": 144}
+{"event": "continuous_speech", "time": 1794543404.1812632, "monotonic": 138523.998781, "uid": 145}
+{"event": "continuous_speech", "time": 1794543407.153491, "monotonic": 138526.971150708, "uid": 146}
+{"event": "continuous_speech", "time": 1794543409.173385, "monotonic": 138528.991141875, "uid": 147}
+{"event": "continuous_speech", "time": 1794543410.7753139, "monotonic": 138530.593146833, "uid": 148}
+{"event": "recognized", "time": 1794543412.644932, "monotonic": 138532.462854583, "uid": 149, "text": "", "reason": "not_registered_interjection", "inference_seconds": 0.760540333983954, "start": 138530.96473900002, "speech_end": 138531.348726875, "command": null, "voice": {"label": "unknown", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": null, "active_seconds": 0.0, "reason": "insufficient_audio"}, "sound_candidates": []}
+{"event": "continuous_speech", "time": 1794543414.584353, "monotonic": 138534.402368916, "uid": 150}
+{"event": "continuous_speech", "time": 1794543416.593031, "monotonic": 138536.411143458, "uid": 151}
+{"event": "continuous_speech", "time": 1794543418.613173, "monotonic": 138538.431381541, "uid": 152}
+{"event": "continuous_speech", "time": 1794543420.6334999, "monotonic": 138540.451805666, "uid": 153}
+{"event": "continuous_speech", "time": 1794543422.386314, "monotonic": 138542.204703416, "uid": 154}
+{"event": "continuous_speech", "time": 1794543424.952471, "monotonic": 138544.77098275, "uid": 155}
+{"event": "continuous_speech", "time": 1794543426.9607959, "monotonic": 138546.779404208, "uid": 156}
+{"event": "continuous_speech", "time": 1794543428.980319, "monotonic": 138548.7990235, "uid": 157}
+{"event": "continuous_speech", "time": 1794543431.394987, "monotonic": 138551.21380825, "uid": 158}
+{"event": "continuous_speech", "time": 1794543432.277704, "monotonic": 138552.096566666, "uid": 159}
+{"event": "recognized", "time": 1794543436.516106, "monotonic": 138556.3351705, "uid": 160, "text": "정선을 빌린다", "reason": "not_registered_interjection", "inference_seconds": 1.7273993749986403, "start": 138552.565724875, "speech_end": 138554.26179087503, "command": null, "voice": {"label": "female", "method": "wav2vec2", "model": "prithivMLmods/Common-Voice-Gender-Detection", "score": 0.9299548268318176, "active_seconds": 1.43, "reason": "classified"}, "sound_candidates": []}
+{"event": "continuous_speech", "time": 1794543437.1771362, "monotonic": 138556.996236333, "uid": 161}
+{"event": "continuous_speech", "time": 1794543437.653374, "monotonic": 138557.472494208, "uid": 162}
+{"event": "continuous_speech", "time": 1794543440.056555, "monotonic": 138559.87579075, "uid": 163}
+{"event": "continuous_speech", "time": 1794543442.0649989, "monotonic": 138561.884330916, "uid": 164}
+{"event": "continuous_speech", "time": 1794543444.0841799, "monotonic": 138563.903608166, "uid": 165}
+{"event": "continuous_speech", "time": 1794543444.944701, "monotonic": 138564.764170083, "uid": 166}
+{"event": "continuous_speech", "time": 1794543447.347421, "monotonic": 138567.167005166, "uid": 167}
+{"event": "continuous_speech", "time": 1794543447.579477, "monotonic": 138567.399072125, "uid": 168}

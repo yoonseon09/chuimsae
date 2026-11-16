@@ -1,0 +1,68 @@
+[
+  {
+    "file": "남_얼쑤.wav",
+    "expected": "male",
+    "label": "male",
+    "method": "wav2vec2",
+    "model": "prithivMLmods/Common-Voice-Gender-Detection",
+    "score": 0.9598003625869751,
+    "active_seconds": 0.4,
+    "reason": "classified",
+    "seconds": 0.089
+  },
+  {
+    "file": "여_얼쑤.wav",
+    "expected": "female",
+    "label": "female",
+    "method": "wav2vec2",
+    "model": "prithivMLmods/Common-Voice-Gender-Detection",
+    "score": 0.9328444004058838,
+    "active_seconds": 0.26,
+    "reason": "classified",
+    "seconds": 0.065
+  },
+  {
+    "file": "남_좋다.wav",
+    "expected": "male",
+    "label": "male",
+    "method": "wav2vec2",
+    "model": "prithivMLmods/Common-Voice-Gender-Detection",
+    "score": 0.9971952438354492,
+    "active_seconds": 0.44,
+    "reason": "classified",
+    "seconds": 0.073
+  },
+  {
+    "file": "여_좋다.wav",
+    "expected": "female",
+    "label": "female",
+    "method": "wav2vec2",
+    "model": "prithivMLmods/Common-Voice-Gender-Detection",
+    "score": 0.9289681911468506,
+    "active_seconds": 0.37,
+    "reason": "classified",
+    "seconds": 0.067
+  },
+  {
+    "file": "남_잘한다.wav",
+    "expected": "male",
+    "label": "male",
+    "method": "wav2vec2",
+    "model": "prithivMLmods/Common-Voice-Gender-Detection",
+    "score": 0.993919849395752,
+    "active_seconds": 0.67,
+    "reason": "classified",
+    "seconds": 0.075
+  },
+  {
+    "file": "여_잘한다.wav",
+    "expected": "female",
+    "label": "unknown",
+    "method": "wav2vec2",
+    "model": "prithivMLmods/Common-Voice-Gender-Detection",
+    "score": 0.6078109741210938,
+    "active_seconds": 1.03,
+    "reason": "low_voice_score",
+    "seconds": 0.085
+  }
+]

@@ -1,0 +1,492 @@
+#!/usr/bin/env python3
+"""
+voice_trigger.py — 한국어 음성인식 → 인식된 말에 맞는 음원 재생
+
+동작 흐름
+  1) 마이크를 계속 듣다가 말소리가 시작되면 녹음, 말이 끝나면(무음 감지) 한 문장으로 자름
+  2) Whisper(mlx-whisper, Apple Silicon 최적화)로 한국어 텍스트 변환
+  3) commands.json 의 phrases 와 비교해 가장 잘 맞는 명령을 찾음
+  4) 그 명령의 sounds 중 하나를 출력 장치로 재생
+
+commands.json 은 실행 중에 고쳐도 자동으로 다시 읽습니다(저장만 하면 됨).
+
+사용법
+  python voice_trigger.py                  # 마이크로 실행
+  python voice_trigger.py --list-devices   # 오디오 장치 번호/이름 확인
+  python voice_trigger.py --type           # 마이크 대신 키보드로 문장 입력해 매칭 테스트
+  python voice_trigger.py --test "안녕하세요"  # 한 문장만 매칭 테스트
+"""
+
+import argparse
+import json
+import os
+import queue
+import random
+import re
+import sys
+import threading
+import time
+from collections import deque
+from datetime import datetime
+from difflib import SequenceMatcher
+
+import numpy as np
+
+try:
+    from rapidfuzz import fuzz as _rf_fuzz
+except ImportError:  # rapidfuzz 가 없으면 표준 라이브러리로 대체
+    _rf_fuzz = None
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+DEFAULT_CONFIG = os.path.join(HERE, "commands.json")
+WHISPER_SR = 16000
+
+DEFAULT_SETTINGS = {
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "ko",
+    "input_device": None,
+    "output_device": None,
+    "start_threshold_db": -40,
+    "silence_duration": 0.7,
+    "min_speech": 0.3,
+    "max_speech": 8.0,
+    "pre_roll": 0.3,
+    "match_threshold": 75,
+    "play_mode": "interrupt",
+    "ignore_while_playing": True,
+    "use_phrases_as_prompt": True,
+    "ignore_texts": [],
+}
+
+
+def log(msg):
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] {msg}", flush=True)
+
+
+# ─────────────────────────────── 설정 파일 ───────────────────────────────
+
+class Config:
+    """commands.json 을 읽고, 파일이 바뀌면 자동으로 다시 읽는다."""
+
+    def __init__(self, path):
+        self.path = os.path.abspath(path)
+        self.base_dir = os.path.dirname(self.path)
+        self._mtime = None
+        self.settings = dict(DEFAULT_SETTINGS)
+        self.commands = []
+        self.fallback = None
+        self.reload(force=True)
+
+    def reload(self, force=False):
+        try:
+            mtime = os.path.getmtime(self.path)
+        except OSError:
+            if force:
+                sys.exit(f"설정 파일을 찾을 수 없습니다: {self.path}")
+            return False
+        if not force and mtime == self._mtime:
+            return False
+        try:
+            with open(self.path, encoding="utf-8") as f:
+                data = json.load(f)
+        except json.JSONDecodeError as e:
+            msg = f"commands.json 형식 오류 (줄 {e.lineno}, 칸 {e.colno}): {e.msg}"
+            if force:
+                sys.exit(msg)
+            log(msg + " → 이전 설정을 계속 사용합니다.")
+            self._mtime = mtime
+            return False
+
+        settings = dict(DEFAULT_SETTINGS)
+        settings.update(data.get("settings", {}))
+        commands = []
+        for i, c in enumerate(data.get("commands", [])):
+            phrases = [p for p in c.get("phrases", []) if str(p).strip()]
+            sounds = c.get("sounds", [])
+            if isinstance(sounds, str):
+                sounds = [sounds]
+            if not phrases or not sounds:
+                log(f"commands[{i}] '{c.get('name', '')}' 는 phrases 또는 sounds 가 비어 있어 건너뜁니다.")
+                continue
+            commands.append({
+                "name": c.get("name", phrases[0]),
+                "phrases": phrases,
+                "_norm": [normalize(p) for p in phrases],
+                "sounds": [self.resolve(s) for s in sounds],
+                "volume": float(c.get("volume", 1.0)),
+                "cooldown": float(c.get("cooldown", 0)),
+                "match": c.get("match", "auto"),
+            })
+        fb = data.get("fallback")
+        if fb and fb.get("sounds"):
+            fs = fb["sounds"] if isinstance(fb["sounds"], list) else [fb["sounds"]]
+            fb = {"name": "fallback", "sounds": [self.resolve(s) for s in fs],
+                  "volume": float(fb.get("volume", 1.0)), "cooldown": 0}
+        else:
+            fb = None
+
+        missing = [s for c in commands for s in c["sounds"] if not os.path.isfile(s)]
+        for s in missing:
+            log(f"⚠️  음원 파일 없음: {s}")
+
+        self.settings, self.commands, self.fallback = settings, commands, fb
+        self._mtime = mtime
+        if not force:
+            log(f"🔄 commands.json 다시 읽음 (명령 {len(commands)}개)")
+        return True
+
+    def resolve(self, p):
+        p = os.path.expanduser(p)
+        return p if os.path.isabs(p) else os.path.join(self.base_dir, p)
+
+
+# ─────────────────────────────── 텍스트 매칭 ───────────────────────────────
+
+_NON_WORD = re.compile(r"[^0-9a-z가-힣ㄱ-ㅎㅏ-ㅣ]+")
+
+
+def normalize(text):
+    """비교용으로 소문자화하고 공백·문장부호를 모두 제거."""
+    return _NON_WORD.sub("", str(text).lower())
+
+
+def _partial_ratio(a, b):
+    """짧은 쪽(a)이 긴 쪽(b) 어딘가와 얼마나 비슷한지 0~100."""
+    if _rf_fuzz is not None:
+        return _rf_fuzz.partial_ratio(a, b)
+    if not a or not b:
+        return 0.0
+    if len(a) > len(b):
+        a, b = b, a
+    best = 0.0
+    for i in range(len(b) - len(a) + 1):
+        best = max(best, SequenceMatcher(None, a, b[i:i + len(a)]).ratio())
+        if best == 1.0:
+            break
+    return best * 100
+
+
+def _ratio(a, b):
+    if _rf_fuzz is not None:
+        return _rf_fuzz.ratio(a, b)
+    return SequenceMatcher(None, a, b).ratio() * 100
+
+
+def find_match(text, commands, threshold):
+    """
+    인식된 문장과 가장 잘 맞는 명령을 찾는다.
+    match 모드
+      "auto"    : 문장 안에 phrase 가 들어 있거나 비슷하면 매칭 (기본)
+      "exact"   : 문장 전체가 phrase 와 같을 때만
+      "contains": phrase 가 글자 그대로 들어 있을 때만
+    반환: (명령, 점수, 걸린 phrase) 또는 (None, 최고점수, None)
+    """
+    t = normalize(text)
+    if not t:
+        return None, 0, None
+    best = (None, 0.0, None, 0)  # cmd, score, phrase, phrase_len
+    for cmd in commands:
+        mode = cmd.get("match", "auto")
+        for phrase, p in zip(cmd["phrases"], cmd["_norm"]):
+            if not p:
+                continue
+            if mode == "exact":
+                score = 100.0 if p == t else 0.0
+            elif mode == "contains":
+                score = 100.0 if p in t else 0.0
+            else:
+                if p in t:
+                    score = 100.0
+                elif len(p) <= 2:
+                    # 한두 글자짜리는 비슷한 글자만으로 오작동하기 쉬워서 정확히 들어 있을 때만
+                    score = 0.0
+                else:
+                    score = max(_partial_ratio(p, t), _ratio(p, t))
+            # 점수가 같으면 더 긴(구체적인) phrase 를 우선
+            if score > best[1] or (score == best[1] and score > 0 and len(p) > best[3]):
+                best = (cmd, score, phrase, len(p))
+    cmd, score, phrase, _ = best
+    if cmd is not None and score >= threshold:
+        return cmd, score, phrase
+    return None, score, None
+
+
+# ─────────────────────────────── 오디오 재생 ───────────────────────────────
+
+class Player:
+    def __init__(self, cfg, dry_run=False):
+        self.cfg = cfg
+        self.dry_run = dry_run
+        self.busy_until = 0.0
+        self.last_played = {}
+        self._cache = {}
+
+    def _load(self, path):
+        import soundfile as sf
+        mtime = os.path.getmtime(path)
+        hit = self._cache.get(path)
+        if hit and hit[0] == mtime:
+            return hit[1], hit[2]
+        data, sr = sf.read(path, dtype="float32", always_2d=False)
+        self._cache[path] = (mtime, data, sr)
+        return data, sr
+
+    def is_playing(self):
+        return time.monotonic() < self.busy_until
+
+    def play(self, cmd):
+        now = time.monotonic()
+        name = cmd["name"]
+        if cmd.get("cooldown", 0) and now - self.last_played.get(name, -1e9) < cmd["cooldown"]:
+            log(f"⏳ '{name}' 쿨다운 중이라 건너뜀")
+            return
+        if self.cfg.settings.get("play_mode") == "skip_if_playing" and self.is_playing():
+            log("⏭️  재생 중이라 건너뜀 (play_mode=skip_if_playing)")
+            return
+
+        path = random.choice(cmd["sounds"])
+        if not os.path.isfile(path):
+            log(f"❌ 음원 파일 없음: {path}")
+            return
+        if self.dry_run:
+            log(f"🔈 (재생 생략) {os.path.relpath(path, self.cfg.base_dir)}")
+            self.last_played[name] = now
+            return
+        try:
+            import sounddevice as sd
+            data, sr = self._load(path)
+            vol = cmd.get("volume", 1.0)
+            if vol != 1.0:
+                data = np.clip(data * vol, -1.0, 1.0)
+            device = resolve_device(self.cfg.settings.get("output_device"), "output")
+            sd.play(data, sr, device=device)  # 이전 재생은 자동으로 멈춤
+            self.busy_until = now + len(data) / sr + 0.25
+            self.last_played[name] = now
+            log(f"🔊 재생: {os.path.relpath(path, self.cfg.base_dir)} ({len(data) / sr:.1f}초)")
+        except Exception as e:
+            log(f"❌ 재생 실패 ({path}): {e}")
+
+
+# ─────────────────────────────── 장치 선택 ───────────────────────────────
+
+def resolve_device(spec, kind):
+    """None(기본 장치) / 숫자(장치 번호) / 문자열(이름 일부) 을 장치 번호로 변환."""
+    if spec is None or spec == "":
+        return None
+    if isinstance(spec, int) or (isinstance(spec, str) and spec.isdigit()):
+        return int(spec)
+    import sounddevice as sd
+    key = "max_input_channels" if kind == "input" else "max_output_channels"
+    for i, d in enumerate(sd.query_devices()):
+        if d[key] > 0 and str(spec).lower() in d["name"].lower():
+            return i
+    raise SystemExit(f"{'입력' if kind == 'input' else '출력'} 장치 '{spec}' 를 찾지 못했습니다. "
+                     f"--list-devices 로 이름을 확인하세요.")
+
+
+def list_devices():
+    import sounddevice as sd
+    din, dout = sd.default.device
+    print("번호  입력  출력  이름")
+    for i, d in enumerate(sd.query_devices()):
+        mark = (" ← 기본 입력" if i == din else "") + (" ← 기본 출력" if i == dout else "")
+        print(f"{i:>3}   {d['max_input_channels']:>3}   {d['max_output_channels']:>3}   {d['name']}{mark}")
+    print('\ncommands.json 의 "input_device"/"output_device" 에 번호나 이름 일부를 적으세요.')
+
+
+# ─────────────────────────────── 음성인식 ───────────────────────────────
+
+class Recognizer:
+    def __init__(self, cfg):
+        self.cfg = cfg
+        try:
+            import mlx_whisper  # noqa: F401
+        except ImportError:
+            sys.exit("mlx-whisper 가 설치되어 있지 않습니다:  pip install mlx-whisper")
+        import mlx_whisper
+        self._mw = mlx_whisper
+
+    def warmup(self):
+        log(f"🧠 모델 준비 중: {self.cfg.settings['model']} (처음 한 번은 다운로드로 시간이 걸립니다)")
+        t0 = time.time()
+        self.transcribe(np.zeros(WHISPER_SR // 2, dtype=np.float32))
+        log(f"✅ 모델 준비 완료 ({time.time() - t0:.1f}초)")
+
+    def transcribe(self, audio):
+        s = self.cfg.settings
+        kwargs = dict(
+            path_or_hf_repo=s["model"],
+            language=s.get("language") or None,
+            condition_on_previous_text=False,
+            temperature=0.0,
+            verbose=None,
+        )
+        if s.get("use_phrases_as_prompt"):
+            words = []
+            for c in self.cfg.commands:
+                words.extend(c["phrases"])
+            if words:
+                kwargs["initial_prompt"] = ", ".join(dict.fromkeys(words))[:400]
+        result = self._mw.transcribe(audio.astype(np.float32), **kwargs)
+        text = (result.get("text") or "").strip()
+        segs = result.get("segments") or []
+        if segs and all(seg.get("no_speech_prob", 0) > 0.6 for seg in segs):
+            return ""
+        return text
+
+
+def is_ignored(text, ignore_list):
+    t = normalize(text)
+    if not t:
+        return True
+    return any(normalize(x) and normalize(x) in t and len(t) <= len(normalize(x)) + 4
+               for x in ignore_list)
+
+
+# ─────────────────────────────── 마이크 / 무음 감지 ───────────────────────────────
+
+def to_16k(x, sr):
+    if sr == WHISPER_SR:
+        return x.astype(np.float32)
+    n = int(round(len(x) * WHISPER_SR / sr))
+    return np.interp(np.linspace(0, len(x) - 1, n), np.arange(len(x)), x).astype(np.float32)
+
+
+def run_mic(cfg, player, recognizer):
+    import sounddevice as sd
+
+    s = cfg.settings
+    in_dev = resolve_device(s.get("input_device"), "input")
+    info = sd.query_devices(in_dev if in_dev is not None else sd.default.device[0])
+    sr = int(info["default_samplerate"])
+    block = int(sr * 0.03)  # 30ms 단위로 판정
+    frames = queue.Queue()
+    utterances = queue.Queue()
+
+    def callback(indata, n, t, status):
+        frames.put(indata[:, 0].copy())
+
+    def worker():
+        while True:
+            audio = utterances.get()
+            if audio is None:
+                return
+            t0 = time.time()
+            try:
+                text = recognizer.transcribe(audio)
+            except Exception as e:
+                log(f"❌ 인식 오류: {e}")
+                continue
+            dt = time.time() - t0
+            cfg.reload()
+            if not text or is_ignored(text, cfg.settings.get("ignore_texts", [])):
+                if text:
+                    log(f"🙈 무시: “{text}”")
+                continue
+            handle_text(text, cfg, player, f"{dt:.2f}초")
+
+    threading.Thread(target=worker, daemon=True).start()
+
+    log(f"🎙️  입력 장치: {info['name']} ({sr}Hz)")
+    out = s.get("output_device")
+    log(f"🔈 출력 장치: {out if out is not None else '시스템 기본'}")
+    log("말해 보세요. 종료는 Ctrl+C")
+
+    pre = deque(maxlen=max(1, int(s["pre_roll"] / 0.03)))
+    buf, speaking, silent_blocks = [], False, 0
+    pending = np.zeros(0, dtype=np.float32)
+
+    with sd.InputStream(device=in_dev, channels=1, samplerate=sr, dtype="float32",
+                        blocksize=block, callback=callback):
+        while True:
+            chunk = frames.get()
+            pending = np.concatenate([pending, chunk])
+            while len(pending) >= block:
+                b, pending = pending[:block], pending[block:]
+                s = cfg.settings
+
+                # 프로그램이 낸 소리를 다시 인식하지 않도록 재생 중에는 듣지 않음
+                if s.get("ignore_while_playing") and player.is_playing():
+                    pre.clear(); buf, speaking, silent_blocks = [], False, 0
+                    continue
+
+                db = 20 * np.log10(np.sqrt(np.mean(b ** 2)) + 1e-10)
+                loud = db > s["start_threshold_db"]
+
+                if not speaking:
+                    pre.append(b)
+                    if loud:
+                        speaking, buf, silent_blocks = True, list(pre), 0
+                    continue
+
+                buf.append(b)
+                silent_blocks = 0 if loud else silent_blocks + 1
+                length = len(buf) * 0.03
+                ended = silent_blocks * 0.03 >= s["silence_duration"]
+                if ended or length >= s["max_speech"]:
+                    speech_len = length - silent_blocks * 0.03
+                    if speech_len >= s["min_speech"]:
+                        utterances.put(to_16k(np.concatenate(buf), sr))
+                        log(f"… 인식 중 ({speech_len:.1f}초 분량)")
+                    pre.clear(); buf, speaking, silent_blocks = [], False, 0
+
+
+def handle_text(text, cfg, player, extra=""):
+    cmd, score, phrase = find_match(text, cfg.commands, cfg.settings["match_threshold"])
+    suffix = f"  [{extra}]" if extra else ""
+    if cmd:
+        log(f"🗣️  “{text}” → ✅ {cmd['name']} (‘{phrase}’, {score:.0f}점){suffix}")
+        player.play(cmd)
+    elif cfg.fallback:
+        log(f"🗣️  “{text}” → 매칭 없음 (최고 {score:.0f}점) → fallback{suffix}")
+        player.play(cfg.fallback)
+    else:
+        log(f"🗣️  “{text}” → 매칭 없음 (최고 {score:.0f}점){suffix}")
+
+
+# ─────────────────────────────── 실행 ───────────────────────────────
+
+def main():
+    ap = argparse.ArgumentParser(description="한국어 음성인식 → 음원 재생")
+    ap.add_argument("--config", default=DEFAULT_CONFIG, help="설정 파일 경로 (기본: commands.json)")
+    ap.add_argument("--list-devices", action="store_true", help="오디오 장치 목록 보기")
+    ap.add_argument("--type", action="store_true", help="마이크 대신 키보드로 문장을 입력해 테스트")
+    ap.add_argument("--test", metavar="문장", help="한 문장만 매칭 테스트")
+    ap.add_argument("--no-play", action="store_true", help="매칭만 하고 소리는 재생하지 않음")
+    args = ap.parse_args()
+
+    if args.list_devices:
+        list_devices()
+        return
+
+    cfg = Config(args.config)
+    log(f"📄 설정: {cfg.path} (명령 {len(cfg.commands)}개)")
+    player = Player(cfg, dry_run=args.no_play)
+
+    if args.test is not None:
+        handle_text(args.test, cfg, player)
+        if not args.no_play:
+            time.sleep(max(0.0, player.busy_until - time.monotonic()))
+        return
+
+    if args.type:
+        log("문장을 입력하고 Enter (종료: Ctrl+C 또는 빈 줄에서 Ctrl+D)")
+        try:
+            for line in sys.stdin:
+                cfg.reload()
+                if line.strip():
+                    handle_text(line.strip(), cfg, player)
+        except KeyboardInterrupt:
+            pass
+        return
+
+    recognizer = Recognizer(cfg)
+    recognizer.warmup()
+    try:
+        run_mic(cfg, player, recognizer)
+    except KeyboardInterrupt:
+        log("종료합니다.")
+
+
+if __name__ == "__main__":
+    main()

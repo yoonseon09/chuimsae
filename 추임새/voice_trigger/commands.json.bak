@@ -1,0 +1,50 @@
+{
+  "settings": {
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "ko",
+
+    "input_device": null,
+    "output_device": null,
+
+    "start_threshold_db": -40,
+    "silence_duration": 0.7,
+    "min_speech": 0.3,
+    "max_speech": 8.0,
+    "pre_roll": 0.3,
+
+    "match_threshold": 75,
+    "play_mode": "interrupt",
+    "ignore_while_playing": true,
+    "use_phrases_as_prompt": true,
+
+    "ignore_texts": [
+      "시청해주셔서 감사합니다",
+      "구독과 좋아요",
+      "자막 제공",
+      "MBC 뉴스",
+      "다음 영상에서 만나요"
+    ]
+  },
+
+  "commands": [
+    {
+      "name": "인사",
+      "phrases": ["안녕", "안녕하세요", "반가워"],
+      "sounds": ["sounds/hello.wav"]
+    },
+    {
+      "name": "박수",
+      "phrases": ["박수", "박수 쳐 줘", "잘했어"],
+      "sounds": ["sounds/clap.wav"],
+      "cooldown": 2
+    },
+    {
+      "name": "실패",
+      "phrases": ["망했다", "틀렸어", "땡"],
+      "sounds": ["sounds/fail.wav"],
+      "volume": 0.8
+    }
+  ],
+
+  "fallback": null
+}
