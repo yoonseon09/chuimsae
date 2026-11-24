@@ -1,5 +1,0 @@
-mlx-whisper
-sounddevice
-soundfile
-numpy
-rapidfuzz
