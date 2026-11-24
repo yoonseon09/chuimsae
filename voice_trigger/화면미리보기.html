@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>추임새 · 디자인 미리보기</title>
+  <meta name="description" content="원을 누른 채 말해보세요. 당신의 목소리에 Mac의 추임새가 응답합니다.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cdefs%3E%3CradialGradient%20id%3D%22a%22%20cx%3D%22.3%22%20cy%3D%22.2%22%20r%3D%22.85%22%3E%3Cstop%20stop-color%3D%22%23fff%22%2F%3E%3Cstop%20offset%3D%22.4%22%20stop-color%3D%22%23c8c9f4%22%2F%3E%3Cstop%20offset%3D%22.7%22%20stop-color%3D%22%2399d9ea%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23c3a9ed%22%2F%3E%3C%2FradialGradient%3E%3C%2Fdefs%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%2229%22%20fill%3D%22url%28%23a%29%22%2F%3E%3C%2Fsvg%3E%0A" type="image/svg+xml">
+  <style>:root{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;color:#262a35;background:#fff;font-synthesis:none;-webkit-font-smoothing:antialiased;--level:0}
+*{box-sizing:border-box}body{margin:0;min-height:100svh;overflow-x:hidden}button,a{-webkit-tap-highlight-color:transparent}button{font:inherit}button:focus-visible,a:focus-visible{outline:3px solid #9d8be7;outline-offset:8px}button{color:inherit}a{color:inherit;text-decoration:none}[hidden]{display:none!important}
+.header{position:absolute;inset:0 0 auto;display:flex;align-items:center;justify-content:space-between;padding:max(32px,env(safe-area-inset-top)) 42px;z-index:2}.wordmark{display:flex;align-items:center;gap:5px;font-size:20px;font-weight:750;letter-spacing:-1.1px}.wordmark-dot{width:5px;height:5px;border-radius:50%;background:#a89ae9;margin-top:13px}.connection{border:0;background:transparent;display:flex;align-items:center;gap:8px;padding:8px 0 8px 12px;font-size:14px;color:#8c8f9c;cursor:pointer}.connection svg{width:16px;height:16px;opacity:.6}.connection-dot{height:5px;width:5px;background:#b9bbc5;border-radius:50%}body[data-state="ready"] .connection-dot,body[data-state="listening"] .connection-dot{background:#80b49c}body[data-state="error"] .connection-dot{background:#cf947a}
+main{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:96px 24px 154px}.experience{display:flex;flex-direction:column;align-items:center;width:100%;transform:translateY(7vh)}.orb-stage{width:340px;height:322px;position:relative;display:grid;place-items:center;margin-bottom:34px;isolation:isolate}.orb-button{position:relative;width:258px;height:258px;padding:0;display:grid;place-items:center;border:0;border-radius:50%;background:transparent;cursor:pointer;touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;z-index:1}.orb-button[aria-disabled="true"]{cursor:default}.orb{position:relative;width:100%;height:100%;display:block;border-radius:50%;overflow:hidden;isolation:isolate;transform:translateZ(0);background:radial-gradient(circle at 36% 29%,#f8f8ff 0,#eff0ff 23%,#c3c9f3 48%,#d6d7f5 63%,#e9edf9 78%,#f6f7ff 100%);box-shadow:inset -9px -16px 30px #c2c8f17a,inset 6px 6px 24px #ffffffcf,0 0 1px 1px #e6e9ff66;animation:breathe 5s ease-in-out infinite;transition:filter .35s,scale .25s}.orb-cloud{position:absolute;display:block;border-radius:45%;filter:blur(23px);mix-blend-mode:multiply;opacity:.76;animation:drift 11s ease-in-out infinite alternate}.cloud-one{width:77%;height:77%;left:-8%;top:24%;background:radial-gradient(ellipse,#6fe4ee 7%,#87cce7 44%,transparent 72%)}.cloud-two{width:80%;height:80%;right:-13%;top:4%;background:radial-gradient(ellipse,#c5a2f4 12%,#aa9de9 43%,transparent 72%);animation-delay:-4s}.cloud-three{width:74%;height:75%;left:13%;bottom:-20%;background:radial-gradient(ellipse,#9e9ce9 8%,#bda8f3 45%,transparent 73%);animation-delay:-7s}.cloud-four{width:66%;height:69%;left:20%;top:-20%;background:radial-gradient(ellipse,#f5cce9 12%,#f0daf9 43%,transparent 74%);animation-delay:-2s;opacity:.8}.orb-core{position:absolute;inset:20%;border-radius:50%;background:radial-gradient(ellipse at 42% 32%,#ffffffcf,#f5f2ff66 38%,transparent 72%);filter:blur(9px);animation:drift 8s ease-in-out infinite alternate-reverse}.orb-glass{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 33% 19%,#ffffffde 0,transparent 42%),radial-gradient(circle at 63% 85%,#ffffff8c,transparent 47%);box-shadow:inset 0 0 15px 7px #ffffff80,inset 0 -5px 10px #c2d0f94d}.orb-halo{position:absolute;inset:4px;border-radius:50%;background:radial-gradient(ellipse,#ddd7fb4d 0,#e9e5ff36 42%,#e8f3fa1a 60%,transparent 73%);filter:blur(17px);animation:breathe 5s ease-in-out infinite}.orb-shadow{position:absolute;bottom:0;width:130px;height:11px;border-radius:50%;background:#aaa4d21a;filter:blur(9px)}.voice-bars{position:absolute;inset:0;display:flex;gap:5px;align-items:center;justify-content:center;opacity:0;transition:opacity .25s}.voice-bars i{width:4px;height:12px;background:#fff;border-radius:8px;box-shadow:0 1px 8px #8c7abe1a}.voice-bars i:nth-child(2),.voice-bars i:nth-child(4){height:23px}.voice-bars i:nth-child(3){height:34px}
+.copy{text-align:center;min-height:106px}.eyebrow{margin:0 0 12px;color:#a1a0b0;letter-spacing:2.2px;font-size:13px;font-weight:500}h1{font-size:27px;font-weight:550;letter-spacing:-1.2px;line-height:1.4;margin:0 0 10px}.instruction{font-size:15px;line-height:1.6;letter-spacing:-.3px;color:#9a9ba8;margin:0;max-width:330px;word-break:keep-all}.phrase-list{display:flex;gap:18px;align-items:center;margin-top:26px;font-size:14px;color:#a9a9b5;letter-spacing:.3px}.phrase-list b{font-weight:400;color:#d6d5df}.footer{position:fixed;bottom:max(26px,env(safe-area-inset-bottom));left:24px;right:24px;display:flex;gap:7px;justify-content:center;align-items:center;font-size:12px;letter-spacing:-.15px;color:#b0b0bd;pointer-events:none}.privacy-mark{width:8px;height:8px;border:1px solid #b9b9c5;border-radius:2px;position:relative;margin-top:3px}.privacy-mark:before{content:"";position:absolute;width:4px;height:4px;border:1px solid #b9b9c5;border-bottom:0;border-radius:4px 4px 0 0;left:0;top:-5px}
+.result{position:fixed;bottom:max(68px,calc(env(safe-area-inset-bottom) + 46px));left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:12px;background:#faf9fce6;border:1px solid #efedf5;border-radius:18px;padding:14px 17px;max-width:440px;width:calc(100% - 48px);backdrop-filter:blur(16px);animation:appear .3s ease-out}.result-icon{width:35px;height:35px;border-radius:12px;background:#efebf8;display:grid;place-items:center;flex-shrink:0;color:#a695cb}.result-icon svg{width:20px;height:20px}.result-copy{min-width:0;flex:1}.result-copy p{margin:0}.result-copy p:first-child{font-size:14px;color:#5b5668;overflow-wrap:anywhere}.result-copy p:last-child{font-size:12px;margin-top:5px;color:#a4a0af;line-height:1.4}.result-time{font-size:14px;color:#9c8ebc;font-variant-numeric:tabular-nums;white-space:nowrap}.result[data-kind="error"]{background:#fdfaf8;border-color:#f2e7df}.result[data-kind="error"] .result-icon{background:#f5ebe5;color:#bd9582}
+body[data-state="listening"] .orb{scale:calc(1.04 + var(--level)*.12);filter:saturate(1.3);animation:breathe 1.8s ease-in-out infinite}body[data-state="listening"] .orb-cloud{animation-duration:2.8s}body[data-state="listening"] .voice-bars{opacity:1}body[data-state="listening"] .voice-bars i{animation:wave .55s ease-in-out infinite alternate}body[data-state="listening"] .voice-bars i:nth-child(2){animation-delay:-.2s}body[data-state="listening"] .voice-bars i:nth-child(3){animation-delay:-.4s}body[data-state="listening"] .voice-bars i:nth-child(4){animation-delay:-.1s}body[data-state="listening"] .voice-bars i:nth-child(5){animation-delay:-.3s}body[data-state="processing"] .orb{animation:thinking 2.5s linear infinite}body[data-state="processing"] .orb-cloud{animation-duration:2s}body[data-state="error"] .orb{filter:saturate(.5);animation-duration:7s}body[data-state="connecting"] .orb{filter:saturate(.65)}body[data-state="playing"] .orb{filter:saturate(1.2);scale:1.03}
+dialog{border:1px solid #efedf3;border-radius:25px;max-width:440px;width:calc(100% - 40px);padding:26px;color:#555361;box-shadow:0 20px 100px #35225c12}dialog::backdrop{background:#ffffffb8;backdrop-filter:blur(14px)}.help-heading{display:flex;align-items:center;justify-content:space-between;gap:16px}.help-heading h2{font-size:21px;letter-spacing:-.6px;margin:0}.close{border:0;background:#f7f5fa;border-radius:50%;font-size:25px;width:32px;height:32px;cursor:pointer;color:#97909f}.help-heading+p{font-size:14px;line-height:1.7;color:#9891a6;overflow-wrap:anywhere}ol{padding-left:21px;font-size:15px;line-height:1.9}li{padding-left:3px;margin-bottom:9px}.help-note{font-size:13px;color:#9993a4;line-height:1.7;overflow-wrap:anywhere}.retry{display:block;width:100%;border:0;border-radius:13px;background:#eee9f8;color:#7b679f;padding:14px;margin-top:22px;cursor:pointer;font-size:15px}
+@keyframes breathe{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}@keyframes drift{0%{transform:translate(-5%,-2%) rotate(-12deg) scale(.94)}100%{transform:translate(7%,6%) rotate(21deg) scale(1.13)}}@keyframes wave{from{transform:scaleY(.5)}to{transform:scaleY(1.16)}}@keyframes thinking{from{transform:rotate(0)}to{transform:rotate(360deg)}}@keyframes appear{from{opacity:0;translate:0 5px}to{opacity:1;translate:0 0}}
+@media(max-width:600px){.header{padding:max(24px,env(safe-area-inset-top)) 25px}.wordmark{font-size:19px}.connection{font-size:14px;gap:7px}.orb-stage{width:300px;height:286px;margin-bottom:30px}.orb-button{width:230px;height:230px}h1{font-size:25px}.eyebrow{font-size:12px;letter-spacing:1.7px}.instruction{font-size:14px}.phrase-list{margin-top:24px;gap:16px}main{padding-bottom:142px}.experience{transform:translateY(7vh)}}
+@media(max-height:650px){main{padding-top:90px;padding-bottom:120px}.orb-stage{height:200px;width:220px;margin-bottom:12px}.orb-button{width:170px;height:170px}.copy{min-height:90px}.eyebrow{margin-bottom:8px}h1{font-size:23px}.phrase-list{margin-top:12px}.result{bottom:53px;padding:9px 13px}.footer{bottom:19px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+  
+</head>
+<body data-state="connecting">
+  <header class="header">
+    <a class="wordmark" href="#" aria-label="추임새 처음으로">추임새<span class="wordmark-dot"></span></a>
+    <button class="connection" id="connection" type="button" aria-haspopup="dialog">
+      <span class="connection-dot" aria-hidden="true"></span><span id="connection-label">Mac 연결 중</span>
+      <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m7.5 5 5 5-5 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </header>
+
+  <main>
+    <section class="experience" aria-labelledby="title">
+      <div class="orb-stage">
+        <div class="orb-halo" aria-hidden="true"></div>
+        <button class="orb-button" id="orb" type="button" aria-label="누르고 있는 동안 녹음" aria-describedby="instruction" aria-disabled="true">
+          <span class="orb" aria-hidden="true">
+            <span class="orb-cloud cloud-one"></span><span class="orb-cloud cloud-two"></span>
+            <span class="orb-cloud cloud-three"></span><span class="orb-cloud cloud-four"></span>
+            <span class="orb-core"></span><span class="orb-glass"></span>
+            <span class="voice-bars"><i></i><i></i><i></i><i></i><i></i></span>
+          </span>
+        </button>
+        <span class="orb-shadow" aria-hidden="true"></span>
+      </div>
+      <div class="copy" aria-live="polite" aria-atomic="true">
+        <p class="eyebrow" id="eyebrow">목소리에 응답하는 순간</p>
+        <h1 id="title">잠시만 기다려주세요</h1>
+        <p class="instruction" id="instruction">Mac과 연결하고 있어요</p>
+      </div>
+      <div class="phrase-list" aria-label="인식하는 추임새"><span>얼쑤</span><b aria-hidden="true">·</b><span>좋다</span><b aria-hidden="true">·</b><span>잘한다</span></div>
+    </section>
+
+    <section class="result" id="result" aria-live="polite" aria-atomic="true" hidden>
+      <div class="result-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 10v4h4l5 4V6l-5 4H5Zm12-1a5 5 0 0 1 0 6m2-9a9 9 0 0 1 0 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="result-copy"><p id="result-title"></p><p id="result-detail"></p></div>
+      <span class="result-time" id="result-time"></span>
+    </section>
+  </main>
+
+  <footer class="footer"><span class="privacy-mark" aria-hidden="true"></span><span id="footer-copy">누르는 동안만 마이크가 켜집니다</span></footer>
+
+  <dialog id="help" aria-labelledby="help-title">
+    <div class="help-heading"><h2 id="help-title">Mac과 연결하기</h2><button id="close-help" class="close" type="button" aria-label="닫기">×</button></div>
+    <p id="help-status">연결 상태를 확인하고 있어요.</p>
+    <ol><li>Mac에서 <strong>웹실행.command</strong>를 열어주세요.</li><li>휴대폰과 Mac을 같은 Wi-Fi에 연결하세요.</li><li>터미널에 표시된 휴대폰 접속 주소를 여세요.</li><li>원을 누르고 마이크 권한을 허용한 뒤, 누른 채 말해주세요. 손을 떼면 Mac에서 처리합니다.</li></ol>
+    <p class="help-note">소리는 Mac에 연결된 스피커에서 나옵니다. 휴대폰에서는 소리가 재생되지 않아요.</p>
+    <p class="help-note">처음 연결할 때는 HTTPS 인증서 설정이 필요해요. Mac 터미널의 ‘휴대폰 설정’ 주소에 기종별 안내가 있습니다.</p>
+    <p class="help-note" id="diagnostic"></p>
+    <button class="retry" id="reconnect" type="button">다시 연결</button>
+  </dialog>
+<script>
+const el = (id) => document.getElementById(id);
+function ready() {
+  document.body.dataset.state = 'ready';
+  el('orb').setAttribute('aria-disabled', 'false');
+  el('title').textContent = '누르고 말해보세요';
+  el('eyebrow').textContent = '목소리에 응답하는 순간';
+  el('instruction').textContent = '말하는 동안 누르고, 끝나면 손을 떼세요';
+}
+function hold(event) {
+  event.preventDefault();
+  if (event.pointerId !== undefined) el('orb').setPointerCapture(event.pointerId);
+  document.body.dataset.state = 'listening';
+  el('title').textContent = '말씀해주세요';
+  el('eyebrow').textContent = '누르고 있는 모습 미리보기';
+  el('instruction').textContent = '실제 마이크는 켜지지 않습니다';
+}
+el('connection-label').textContent = '디자인 미리보기';
+el('footer-copy').textContent = '화면 검토용 · 실제 녹음과 재생은 하지 않습니다';
+el('orb').addEventListener('pointerdown', hold);
+['pointerup', 'pointercancel', 'lostpointercapture'].forEach((name) => el('orb').addEventListener(name, ready));
+el('orb').addEventListener('contextmenu', (event) => event.preventDefault());
+el('orb').addEventListener('keydown', (event) => {if ([' ', 'Enter'].includes(event.key)) hold(event);});
+el('orb').addEventListener('keyup', ready);
+window.addEventListener('blur', ready);
+el('connection').onclick = () => {el('help-status').textContent = '화면 검토용 파일입니다. 실제 연결은 웹실행.command로 시작하세요.';el('help').showModal();};
+el('close-help').onclick = () => el('help').close();
+el('reconnect').textContent = '닫기';
+el('reconnect').onclick = () => el('help').close();
+ready();
+</script></body>
+</html>
