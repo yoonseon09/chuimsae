@@ -1,0 +1,44 @@
+{
+  "settings": {
+    "model": "openai/whisper-large-v3-turbo",
+    "engine": "auto",
+    "language": "ko",
+
+    "input_device": null,
+    "output_device": null,
+
+    "start_threshold_db": -40,
+    "silence_duration": 0.4,
+    "min_speech": 0.2,
+    "max_speech": 4.0,
+    "pre_roll": 0.3,
+
+    "match_threshold": 75,
+    "play_mode": "interrupt",
+    "ignore_while_playing": true,
+    "use_phrases_as_prompt": true,
+
+    "ignore_texts": [
+      "시청해주셔서 감사합니다",
+      "구독과 좋아요",
+      "자막 제공",
+      "MBC 뉴스",
+      "다음 영상에서 만나요"
+    ]
+  },
+
+  "commands": [
+    {
+      "name": "얼쑤",
+      "phrases": ["얼쑤", "얼수", "얼쑥"],
+      "sounds": ["남_얼쑤.wav"]
+    },
+    {
+      "name": "좋다",
+      "phrases": ["좋다", "조타", "좋타"],
+      "sounds": ["남_좋다.wav"]
+    }
+  ],
+
+  "fallback": null
+}

@@ -1,0 +1,102 @@
+{
+  "settings": {
+    "model": "mlx-community/whisper-small-mlx",
+    "word_timestamps": false,
+    "language": "ko",
+    "input_device": null,
+    "output_device": null,
+    "vad_start": 0.6,
+    "vad_end": 0.35,
+    "start_frames": 2,
+    "silence_duration": 0.32,
+    "pre_roll": 0.224,
+    "min_speech": 0.128,
+    "max_speech": 5.0,
+    "overlap": 0.384,
+    "max_latency": 10.0,
+    "output_margin": 0.05,
+    "echo_guard": 0.2,
+    "max_frame_age": 0.25,
+    "cooldown": 0.7,
+    "min_avg_logprob": -0.8,
+    "max_no_speech_prob": 0.55,
+    "max_compression_ratio": 2.4,
+    "min_word_probability": 0.35,
+    "event_log": "logs/events.jsonl",
+    "voice_mode": "model",
+    "voice_min_seconds": 0.16,
+    "voice_min_confidence": 0.8,
+    "duplicate_window": 5.0,
+    "playback_gap": 2.0,
+    "burst_silence": 0.6,
+    "queue_timeout": 60.0,
+    "queue_capacity": 16
+  },
+  "commands": [
+    {
+      "name": "얼쑤",
+      "enabled": true,
+      "phrases": [
+        "얼쑤",
+        "얼수"
+      ],
+      "sounds": [
+        "남_얼쑤.wav"
+      ],
+      "match": "word",
+      "volume": 1.0,
+      "cooldown": 0.7,
+      "voice_sounds": {
+        "male": [
+          "남_얼쑤*.wav"
+        ],
+        "female": [
+          "여_얼쑤*.wav"
+        ]
+      }
+    },
+    {
+      "name": "좋다",
+      "enabled": true,
+      "phrases": [
+        "좋다",
+        "조타",
+        "좋타"
+      ],
+      "sounds": [
+        "남_좋다.wav"
+      ],
+      "match": "word",
+      "voice_sounds": {
+        "male": [
+          "남_좋다*.wav"
+        ],
+        "female": [
+          "여_좋다*.wav"
+        ]
+      }
+    },
+    {
+      "name": "잘한다",
+      "enabled": true,
+      "phrases": [
+        "잘한다"
+      ],
+      "sounds": [
+        "남_잘한다.wav"
+      ],
+      "match": "word",
+      "volume": 1.0,
+      "cooldown": 0.7,
+      "voice_sounds": {
+        "male": [
+          "남_잘한다*.wav"
+        ],
+        "female": [
+          "여_잘한다*.wav"
+        ]
+      }
+    }
+  ],
+  "fallback": null
+}
